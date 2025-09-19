@@ -1,0 +1,28 @@
+# Android / Kotlin / Gradle için .gitignore
+
+# Build çıktı dosyaları
+/build
+/app/build
+*/build/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# Gradle cache
+.gradle/
+**/local.properties
+
+# Log dosyaları
+*.log
+
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Keystore (gizli kalmalı)
+*.jks
+*.keystore
+
+# Android profiling
+captures/
