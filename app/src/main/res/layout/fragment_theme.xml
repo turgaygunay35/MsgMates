@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_blue"
+        app:title="Tema"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Theme Mode Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tema Modu"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_light_theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Açık"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_dark_theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Koyu"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_system_theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sistem"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Color Theme Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Renk Teması"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rbMsgMatesGradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MsgMates Gradient"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_blue_theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mavi"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_green_theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yeşil"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Font Size Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yazı Boyutu"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_small_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Küçük"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_medium_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Orta"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_large_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Büyük"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Chat Bubble Density Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sohbet Balon Sıkılığı"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_tight_bubbles"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sıkı"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_medium_bubbles"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Orta"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/rb_loose_bubbles"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ferah"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Live Preview Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="@color/primary_blue">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Canlı Önizleme"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bu bir önizleme mesajıdır. Tema ayarlarınızı burada görebilirsiniz."
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/bg_rounded_white_light"
+                        android:padding="12dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+

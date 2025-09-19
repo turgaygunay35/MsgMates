@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Message animations -->
+    <item name="message_slide_in" type="anim">
+        <set>
+            <translate
+                android:fromYDelta="50dp"
+                android:toYDelta="0dp"
+                android:duration="300"
+                android:interpolator="@android:anim/decelerate_interpolator" />
+            <alpha
+                android:fromAlpha="0.0"
+                android:toAlpha="1.0"
+                android:duration="300" />
+        </set>
+    </item>
+    
+    <item name="message_fade_in" type="anim">
+        <alpha
+            android:fromAlpha="0.0"
+            android:toAlpha="1.0"
+            android:duration="200"
+            android:interpolator="@android:anim/decelerate_interpolator" />
+    </item>
+    
+    <!-- Filter chip animations -->
+    <item name="chip_scale_up" type="anim">
+        <scale
+            android:fromXScale="1.0"
+            android:toXScale="1.1"
+            android:fromYScale="1.0"
+            android:toYScale="1.1"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:duration="100"
+            android:interpolator="@android:anim/decelerate_interpolator" />
+    </item>
+    
+    <item name="chip_scale_down" type="anim">
+        <scale
+            android:fromXScale="1.1"
+            android:toXScale="1.0"
+            android:fromYScale="1.1"
+            android:toYScale="1.0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:duration="100"
+            android:interpolator="@android:anim/accelerate_interpolator" />
+    </item>
+    
+    <!-- Badge shrink animation -->
+    <item name="badge_shrink" type="anim">
+        <set>
+            <scale
+                android:fromXScale="1.0"
+                android:toXScale="0.0"
+                android:fromYScale="1.0"
+                android:toYScale="0.0"
+                android:pivotX="50%"
+                android:pivotY="50%"
+                android:duration="200"
+                android:interpolator="@android:anim/accelerate_interpolator" />
+            <alpha
+                android:fromAlpha="1.0"
+                android:toAlpha="0.0"
+                android:duration="200" />
+        </set>
+    </item>
+    
+    <!-- AppBar elevation animation -->
+    <item name="appbar_elevate" type="anim">
+        <set>
+            <objectAnimator
+                android:propertyName="elevation"
+                android:fromFloat="0dp"
+                android:toFloat="4dp"
+                android:duration="200"
+                android:interpolator="@android:anim/decelerate_interpolator" />
+        </set>
+    </item>
+    
+    <item name="appbar_lower" type="anim">
+        <set>
+            <objectAnimator
+                android:propertyName="elevation"
+                android:fromFloat="4dp"
+                android:toFloat="0dp"
+                android:duration="200"
+                android:interpolator="@android:anim/accelerate_interpolator" />
+        </set>
+    </item>
+</resources>

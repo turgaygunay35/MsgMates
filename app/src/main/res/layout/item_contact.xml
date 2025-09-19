@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false" android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Avatar Container -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp">
+
+            <!-- Contact Avatar -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_contact_avatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person"
+                app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+            <!-- Presence Indicator -->
+            <ImageView
+                android:id="@+id/iv_presence_indicator"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/bg_circle_white"
+                android:padding="2dp"
+                android:src="@drawable/ic_circle_green"
+                android:visibility="gone" />
+
+            <!-- MsgMates Badge -->
+            <ImageView
+                android:id="@+id/iv_msg_mates_badge"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/bg_circle_primary"
+                android:padding="4dp"
+                android:src="@drawable/ic_msgmates"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- Contact Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Name and Favorite -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_contact_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Ahmet Yılmaz" />
+
+                <ImageView
+                    android:id="@+id/iv_favorite"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_star_filled"
+                    android:tint="?attr/colorPrimary"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Phone Number -->
+            <TextView
+                android:id="@+id/tv_contact_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="14sp"
+                tools:text="+90 555 123 4567" />
+
+            <!-- Last Seen -->
+            <TextView
+                android:id="@+id/tv_last_seen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="5 dk önce" />
+
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Call Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_call"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Ara"
+                app:icon="@drawable/ic_call"
+                app:iconSize="20dp" />
+
+            <!-- Message Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_message"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Mesaj"
+                app:icon="@drawable/ic_message"
+                app:iconSize="20dp" />
+
+            <!-- Video Call Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_video_call"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Görüntülü Ara"
+                app:icon="@drawable/ic_video_call"
+                app:iconSize="20dp" />
+
+            <!-- Overflow Menu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_overflow"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Daha fazla"
+                app:icon="@drawable/ic_more_vert"
+                app:iconSize="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

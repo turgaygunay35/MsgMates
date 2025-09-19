@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Telefon gösterimi -->
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+90 5xx xxx xx xx"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- OTP input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilOtp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/otp_verify_title"
+        app:layout_constraintTop_toBottomOf="@id/txtPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="6"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Doğrula -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerify"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_verify_title"
+        app:layout_constraintTop_toBottomOf="@id/tilOtp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Yeniden Gönder -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnResend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_entry_send_code"
+        app:layout_constraintTop_toBottomOf="@id/btnVerify"
+        app:layout_constraintStart_toStartOf="@id/btnVerify"
+        android:layout_marginTop="12dp" />
+
+    <!-- Geri sayım -->
+    <TextView
+        android:id="@+id/txtCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="45s"
+        app:layout_constraintBaseline_toBaselineOf="@id/btnResend"
+        app:layout_constraintEnd_toEndOf="@id/btnVerify" />
+
+    <!-- Progress (kardeş, üstte ortalı) -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressOtp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/btnVerify"
+        app:layout_constraintBottom_toBottomOf="@id/btnVerify"
+        app:layout_constraintStart_toStartOf="@id/btnVerify"
+        app:layout_constraintEnd_toEndOf="@id/btnVerify" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

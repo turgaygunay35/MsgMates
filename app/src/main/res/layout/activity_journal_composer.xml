@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_primary">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="@color/surface">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İptal"
+            android:textColor="@color/text_primary"
+            style="@style/Widget.Material3.Button.TextButton" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Günlük Oluştur"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yayınla"
+            android:textColor="@color/primary"
+            style="@style/Widget.Material3.Button.TextButton" />
+
+    </LinearLayout>
+
+    <!-- Content Type Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:tabMode="fixed"
+        app:tabGravity="fill">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kamera" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Galeri" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metin" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ses" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Content Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Camera Content -->
+        <FrameLayout
+            android:id="@+id/layout_camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <SurfaceView
+                android:id="@+id/surface_camera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="32dp"
+                android:text="Çek"
+                style="@style/Widget.Material3.Button.IconButton"
+                app:icon="@drawable/ic_camera" />
+
+        </FrameLayout>
+
+        <!-- Gallery Content -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:listitem="@layout/item_gallery_photo" />
+
+        <!-- Text Content -->
+        <ScrollView
+            android:id="@+id/layout_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Background Selection -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arka Plan"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_backgrounds"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="16dp"
+                    tools:listitem="@layout/item_background" />
+
+                <!-- Text Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Günlüğünü yaz..."
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_text_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minLines="5"
+                        android:maxLines="10"
+                        android:gravity="top" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Text Style Options -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_align_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="L"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_align_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_align_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_font_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_marginEnd="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Audio Content -->
+        <LinearLayout
+            android:id="@+id/layout_audio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ses Kaydı"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Waveform View -->
+            <View
+                android:id="@+id/waveform_view"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_waveform"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Record Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_record"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="🎤"
+                android:textSize="24sp"
+                style="@style/Widget.Material3.Button.IconButton"
+                app:icon="@drawable/ic_mic" />
+
+            <TextView
+                android:id="@+id/tv_record_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00"
+                android:textSize="18sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Duration Selection -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/surface">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Süre:"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_duration_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6s"
+            android:textSize="12sp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_duration_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12s"
+            android:textSize="12sp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_duration_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24s"
+            android:textSize="12sp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_duration_48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="48s"
+            android:textSize="12sp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+

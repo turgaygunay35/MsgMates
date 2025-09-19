@@ -1,0 +1,240 @@
+plugins {
+  id 'com.android.application'
+  id 'org.jetbrains.kotlin.android'
+  id 'androidx.navigation.safeargs.kotlin'
+  id 'kotlin-kapt'
+  id 'kotlin-parcelize'
+  id 'dagger.hilt.android.plugin'
+  // Versiyon KALDIRILDI: root ile hizalanır
+  id 'org.jetbrains.kotlin.plugin.serialization'
+  id 'com.google.protobuf' version '0.9.4'
+  id 'io.gitlab.arturbosch.detekt' version '1.23.0'
+  id 'org.jlleitschuh.gradle.ktlint' version '11.6.1'
+}
+
+/* Module-level exclude GEREKSİZ, root'ta var. İstersen kaldır. */
+// configurations.all {
+//   exclude group: "androidx.annotation", module: "annotation-experimental"
+// }
+
+android {
+  namespace 'com.msgmates.app'
+  compileSdk 36
+
+  flavorDimensions += "env"
+
+  defaultConfig {
+    applicationId "com.msgmates.app"
+    minSdk 24
+    targetSdk 36 // (İstersen 33'te bırakabilirsin; 36 öneri)
+    versionCode 1
+    versionName "1.0"
+
+    // MsgMates BuildConfig
+    buildConfigField "boolean", "ENABLE_PASSWORD_BYPASS", "true"
+    buildConfigField "String", "DEBUG_ACCOUNTS_JSON", "\"[]\""
+    buildConfigField "String", "DEBUG_ACCOUNTS", "\"\""
+
+    // Network Configuration
+    buildConfigField "String", "BASE_URL", "\"https://api.msgmates.com/\""
+    buildConfigField "String", "WS_URL", "\"wss://api.msgmates.com/ws\""
+    buildConfigField "String", "API_PATH_PREFIX", "\"\"" // gerektiğinde "api/" yaparız
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    vectorDrawables { useSupportLibrary true }
+  }
+
+  productFlavors {
+    dev {
+      dimension "env"
+      resValue "string", "env_name", "dev"
+      applicationIdSuffix ".dev"
+    }
+    prod {
+      dimension "env"
+      resValue "string", "env_name", "prod"
+    }
+  }
+
+  buildTypes {
+    debug {
+      minifyEnabled false
+      debuggable true
+      buildConfigField "boolean", "ENABLE_PASSWORD_BYPASS", "true"
+      buildConfigField "boolean", "FF_QA_SCREEN", "true"
+      buildConfigField "boolean", "FF_STRICT_MODE", "true"
+    }
+    release {
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      buildConfigField "boolean", "ENABLE_PASSWORD_BYPASS", "false"
+      buildConfigField "boolean", "FF_QA_SCREEN", "false"
+      buildConfigField "boolean", "FF_STRICT_MODE", "false"
+    }
+  }
+
+  kapt {
+    arguments {
+      arg("room.schemaLocation", "$projectDir/schemas")
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+    coreLibraryDesugaringEnabled true
+  }
+  kotlinOptions { jvmTarget = '17' }
+
+  buildFeatures {
+    viewBinding true
+    buildConfig true
+  }
+
+  lint {
+    baseline = file("lint-baseline.xml")
+    abortOnError = true
+    warningsAsErrors = true
+    checkAllWarnings = true
+    enable 'UnusedResources', 'UnusedIds', 'NewApi', 'InlinedApi'
+    disable 'GoogleAppIndexingWarning', 'HardcodedText', 'MissingTranslation'
+  }
+}
+
+protobuf {
+  protoc {
+    artifact = "com.google.protobuf:protoc:3.25.1"
+  }
+  generateProtoTasks {
+    all().each { task ->
+      task.builtins {
+        remove("java")
+        java {
+          option "lite"
+        }
+      }
+    }
+  }
+}
+
+detekt {
+  buildUponDefaultConfig = true
+  allRules = false
+  config = files("$projectDir/config/detekt/detekt.yml")
+  baseline = file("$projectDir/config/detekt/detekt-baseline.xml")
+}
+
+ktlint {
+  android.set(true)
+  ignoreFailures.set(false)
+}
+
+tasks.register("ciQuality") {
+  dependsOn("lintDebug", "ktlintCheck", "detekt", "testDebugUnitTest", "assembleDebug")
+}
+
+dependencies {
+  // Tek sürüm: experimental'ı dışladık; annotation stabil
+  implementation "androidx.annotation:annotation:1.7.1"
+
+  implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+  // Core Android
+  implementation 'androidx.core:core-ktx:1.13.1'
+  implementation 'androidx.appcompat:appcompat:1.7.0'
+  implementation 'com.google.android.material:material:1.12.0'
+  implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+  implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+  implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+  // Navigation
+  implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+  implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
+
+  // Lifecycle
+  implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
+  implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.4'
+  implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.4'
+
+  // DataStore
+  implementation 'androidx.datastore:datastore-preferences:1.1.1'
+  implementation 'androidx.datastore:datastore:1.1.1'
+  implementation 'androidx.datastore:datastore-core-okio:1.1.1'
+
+  // Security
+  implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+  
+  // Tink Crypto
+  implementation 'com.google.crypto.tink:tink-android:1.12.0'
+  
+  // Proto
+  implementation 'com.google.protobuf:protobuf-javalite:3.25.1'
+
+  // **JSON STACK: SADELEŞTİRİLDİ → sadece kotlinx-serialization**
+  implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0'
+  implementation 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0'
+  // ❌ KALDIR: com.squareup.retrofit2:converter-gson
+  // ❌ KALDIR: com.squareup.moshi:moshi, moshi-kotlin, converter-moshi
+
+  // WorkManager (tek sürüm)
+  implementation 'androidx.work:work-runtime-ktx:2.9.1'
+
+  // Network
+  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+  implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+
+  // ExoPlayer
+  implementation 'androidx.media3:media3-exoplayer:1.2.1'
+  implementation 'androidx.media3:media3-ui:1.2.1'
+
+  // Room
+  implementation 'androidx.room:room-runtime:2.6.1'
+  implementation 'androidx.room:room-ktx:2.6.1'
+  kapt 'androidx.room:room-compiler:2.6.1'
+
+  // Image Loading
+  implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+  // Play Services - Location
+  implementation 'com.google.android.gms:play-services-location:21.2.0'
+
+  // libphonenumber (TEK)
+  implementation 'com.googlecode.libphonenumber:libphonenumber:8.13.45'
+
+  // Coroutines
+  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+
+  // Hilt
+  implementation 'com.google.dagger:hilt-android:2.48'
+  kapt 'com.google.dagger:hilt-compiler:2.48'
+  implementation 'androidx.hilt:hilt-work:1.1.0' // WorkManager köprüsü (2.9.1 ile uyumlu)
+
+  // Paging3
+  implementation 'androidx.paging:paging-runtime-ktx:3.2.1'
+
+  // RecyclerView Selection
+  implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
+
+  // (Rehberde Coil kullanıyorsun, tamam)
+  implementation 'io.coil-kt:coil:2.6.0'
+
+    // CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    
+    // Timber logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+  // Testing
+  testImplementation 'junit:junit:4.13.2'
+  androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+  coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.4"
+}
+
+kapt {
+  correctErrorTypes = true
+  useBuildCache = false
+  mapDiagnosticLocations = true
+}

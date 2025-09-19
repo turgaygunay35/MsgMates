@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/journal_primary"
+            app:title="@string/journal_edit_entry"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:menu="@menu/journal_edit_menu" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/journal_form_padding">
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:visibility="gone" />
+
+            <!-- Title Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_form_field_margin"
+                android:hint="@string/journal_hint_title"
+                app:boxStrokeColor="@color/journal_primary"
+                app:hintTextColor="@color/journal_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Content Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_form_field_margin"
+                android:hint="@string/journal_hint_content"
+                app:boxStrokeColor="@color/journal_primary"
+                app:hintTextColor="@color/journal_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="10"
+                    android:minLines="5" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Mood Selection -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_form_field_margin"
+                app:cardCornerRadius="@dimen/journal_card_corner_radius"
+                app:cardElevation="@dimen/journal_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/journal_card_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/journal_padding_small"
+                        android:text="@string/journal_select_mood"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        android:textColor="@color/journal_text_primary" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupMoods"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😊"
+                            android:tag="HAPPY"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😢"
+                            android:tag="SAD"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🤩"
+                            android:tag="EXCITED"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😠"
+                            android:tag="ANGRY"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😌"
+                            android:tag="CALM"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😟"
+                            android:tag="WORRIED"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🙏"
+                            android:tag="GRATEFUL"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😌"
+                            android:tag="NOSTALGIC"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌟"
+                            android:tag="HOPEFUL"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😴"
+                            android:tag="TIRED"
+                            app:chipBackgroundColor="@color/journal_primary_light"
+                            app:chipStrokeColor="@color/journal_primary"
+                            android:textColor="@color/journal_primary" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tags Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_form_field_margin"
+                android:hint="@string/journal_hint_tags"
+                app:boxStrokeColor="@color/journal_primary"
+                app:hintTextColor="@color/journal_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Photos Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_form_field_margin"
+                app:cardCornerRadius="@dimen/journal_card_corner_radius"
+                app:cardElevation="@dimen/journal_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/journal_card_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/journal_padding_small"
+                        android:text="@string/journal_photos"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        android:textColor="@color/journal_text_primary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonAddPhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journal_add_photo"
+                        app:icon="@drawable/ic_add"
+                        app:iconGravity="textStart" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewPhotos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/journal_padding_small"
+                        android:orientation="horizontal"
+                        tools:listitem="@layout/item_journal_photo" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

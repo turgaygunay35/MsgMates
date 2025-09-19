@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_chats"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@drawable/bg_appbar_gradient"
+    android:title=""
+    android:subtitle=""
+    app:navigationIcon="@null"
+    app:titleCentered="false"
+    app:subtitleCentered="false"
+    app:titleTextColor="@android:color/white"
+    app:subtitleTextColor="@android:color/white">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/msg_logo"
+        android:contentDescription="@string/title_msgmates" />
+
+    <!-- Arama Kapsayıcısı -->
+    <FrameLayout
+        android:id="@+id/search_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_search_chats"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:contentDescription="@string/hint_search_chats" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+</com.google.android.material.appbar.MaterialToolbar>

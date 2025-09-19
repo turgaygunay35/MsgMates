@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dest_phone_entry">
+
+    <!-- Auth Graph -->
+    <include app:graph="@navigation/auth_graph" />
+
+    <!-- Main Graph -->
+    <include app:graph="@navigation/nav_main" />
+
+    <!-- 💬 Chats -->
+    <fragment
+        android:id="@+id/dest_chats"
+        android:name="com.msgmates.app.ui.chats.ChatsFragment"
+        android:label="@string/nav_chats">
+        <action
+            android:id="@+id/action_chats_to_chat_detail"
+            app:destination="@id/dest_chat_detail" />
+        <action
+            android:id="@+id/action_chats_to_group_wizard"
+            app:destination="@id/dest_group_wizard" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dest_chat_detail"
+        android:name="com.msgmates.app.ui.chats.ChatDetailFragment"
+        android:label="Sohbet">
+        <argument android:name="conversationId" app:argType="string" />
+        <argument android:name="conversationName" app:argType="string" />
+    </fragment>
+
+    <!-- 📇 Contacts -->
+    <fragment
+        android:id="@+id/dest_contacts"
+        android:name="com.msgmates.app.ui.contacts.list.ContactsListFragment"
+        android:label="@string/nav_contacts">
+        <action
+            android:id="@+id/action_contacts_to_detail"
+            app:destination="@id/dest_contact_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dest_contact_detail"
+        android:name="com.msgmates.app.ui.contacts.detail.ContactDetailFragment"
+        android:label="@string/contact_detail">
+        <argument android:name="contactId" app:argType="long" />
+    </fragment>
+
+    <!-- 👥 Groups -->
+    <fragment
+        android:id="@+id/dest_group_wizard"
+        android:name="com.msgmates.app.ui.groups.wizard.GroupWizardFragment"
+        android:label="Yeni Grup">
+        <action
+            android:id="@+id/action_group_wizard_to_chat_detail"
+            app:destination="@id/dest_chat_detail" />
+    </fragment>
+
+    <!-- 📓 Journal -->
+    <fragment
+        android:id="@+id/dest_journal"
+        android:name="com.msgmates.app.ui.journal.list.JournalListFragment"
+        android:label="@string/nav_journal" />
+
+    <!-- 📂 Daily Share -->
+    <fragment
+        android:id="@+id/dest_daily_share"
+        android:name="com.msgmates.app.ui.daily.DailyShareFragment"
+        android:label="@string/daily_share" />
+
+    <!-- ☰ Menu -->
+    <fragment
+        android:id="@+id/dest_menu"
+        android:name="com.msgmates.app.feature.menu.MenuFragment"
+        android:label="@string/nav_menu" />
+
+    <!-- 📞 Calls -->
+    <fragment
+        android:id="@+id/dest_outgoing_call"
+        android:name="com.msgmates.app.ui.call.OutgoingCallFragment"
+        android:label="Giden Arama">
+        <argument android:name="calleeId" app:argType="string" />
+        <argument android:name="calleeName" app:argType="string" />
+        <argument android:name="calleeAvatar" app:argType="string" />
+        <argument android:name="isVideo" app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dest_ongoing_call"
+        android:name="com.msgmates.app.ui.call.OngoingCallFragment"
+        android:label="Arama Devam Ediyor">
+        <argument android:name="callId" app:argType="string" />
+        <argument android:name="callerId" app:argType="string" />
+        <argument android:name="callerName" app:argType="string" />
+        <argument android:name="callerAvatar" app:argType="string" />
+        <argument android:name="isVideo" app:argType="boolean" />
+    </fragment>
+
+    <!-- 👥 Group Wizard Steps -->
+    <fragment
+        android:id="@+id/dest_step_select_members"
+        android:name="com.msgmates.app.ui.groups.wizard.steps.StepSelectMembersFragment"
+        android:label="Üye Seç" />
+
+    <fragment
+        android:id="@+id/dest_step_group_meta"
+        android:name="com.msgmates.app.ui.groups.wizard.steps.StepGroupMetaFragment"
+        android:label="Grup Bilgileri" />
+
+    <fragment
+        android:id="@+id/dest_step_review_create"
+        android:name="com.msgmates.app.ui.groups.wizard.steps.StepReviewCreateFragment"
+        android:label="Grup Oluştur" />
+
+</navigation>

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.msgmates.app.data.secure;
+
+option java_package = "com.msgmates.app.data.secure";
+option java_multiple_files = true;
+
+message TokenStore {
+  bytes access_token = 1;      // şifreli ciphertext (Tink ile daha da sar)
+  bytes refresh_token = 2;
+  int64 issued_at_epoch_ms = 3;
+  int64 expires_at_epoch_ms = 4;
+  int32 key_version = 5;
+}

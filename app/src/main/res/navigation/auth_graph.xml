@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_graph"
+    app:startDestination="@id/dest_phone_entry">
+
+    <!-- Phone Entry Fragment -->
+    <fragment
+        android:id="@+id/dest_phone_entry"
+        android:name="com.msgmates.app.ui.auth.phone.PhoneEntryFragment"
+        android:label="@string/title_phone_login"
+        tools:layout="@layout/fragment_phone_entry">
+
+        <action
+            android:id="@+id/action_phone_entry_to_otp_verify"
+            app:destination="@id/dest_otp_verify"
+            app:popUpTo="@id/dest_phone_entry"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!-- OTP Verify Fragment -->
+    <fragment
+        android:id="@+id/dest_otp_verify"
+        android:name="com.msgmates.app.ui.auth.otp.OtpVerifyFragment"
+        android:label="@string/title_otp_verify"
+        tools:layout="@layout/fragment_otp_verify">
+
+        <argument
+            android:name="phone"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

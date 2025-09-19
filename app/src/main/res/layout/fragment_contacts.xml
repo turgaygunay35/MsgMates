@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.contacts.ContactsFragment">
+
+    <!-- SwipeRefreshLayout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Search Bar -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:boxStrokeColor="?attr/colorPrimary"
+                app:endIconMode="clear_text"
+                app:hintTextColor="?attr/colorOnSurfaceVariant">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kişi ara..."
+                    android:inputType="text"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Offline Indicator -->
+            <TextView
+                android:id="@+id/tv_offline_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_offline_indicator"
+                android:padding="12dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone"
+                tools:text="Çevrimdışı mod - Son güncelleme: 5 dakika önce"
+                tools:visibility="visible" />
+
+            <!-- Filter Chips -->
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                app:singleSelection="false"
+                app:chipSpacingHorizontal="8dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_favorites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favoriler"
+                    app:chipIcon="@drawable/ic_star"
+                    app:chipIconVisible="true"
+                    style="@style/Widget.Material3.Chip.Filter" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_msg_mates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MsgMates"
+                    app:chipIcon="@drawable/ic_msgmates"
+                    app:chipIconVisible="true"
+                    style="@style/Widget.Material3.Chip.Filter" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Content Container -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Contacts List -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="16dp"
+                    tools:listitem="@layout/item_contact" />
+
+                <!-- Shimmer Loading -->
+                <LinearLayout
+                    android:id="@+id/shimmer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_circle_gray" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="120dp"
+                                    android:layout_height="16dp"
+                                    android:background="@drawable/bg_rect_gray"
+                                    android:layout_marginBottom="8dp" />
+
+                                <View
+                                    android:layout_width="80dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_rect_gray" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <!-- Repeat shimmer items -->
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_circle_gray" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="120dp"
+                                    android:layout_height="16dp"
+                                    android:background="@drawable/bg_rect_gray"
+                                    android:layout_marginBottom="8dp" />
+
+                                <View
+                                    android:layout_width="80dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_rect_gray" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                </LinearLayout>
+
+                <!-- Permission Required State -->
+                <LinearLayout
+                    android:id="@+id/layout_permission"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="32dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_contacts_permission"
+                        android:tint="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/tv_permission_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Rehber Erişimi Gerekli"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <TextView
+                        android:id="@+id/tv_permission_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:text="MsgMates'in rehberinizdeki kişileri görmesi için izin gereklidir."
+                        android:textAlignment="center"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_permission_grant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="İzin Ver"
+                        app:icon="@drawable/ic_check" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_permission_settings"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ayarlara Git"
+                        app:icon="@drawable/ic_settings" />
+
+                </LinearLayout>
+
+                <!-- Empty State -->
+                <LinearLayout
+                    android:id="@+id/layout_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="32dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_contacts_empty"
+                        android:tint="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/tv_empty_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rehber boş"
+                        android:textSize="18sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                </LinearLayout>
+
+                <!-- Error State -->
+                <LinearLayout
+                    android:id="@+id/layout_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="32dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_error"
+                        android:tint="?attr/colorError" />
+
+                    <TextView
+                        android:id="@+id/tv_error_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="Bir hata oluştu"
+                        android:textSize="18sp"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_retry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tekrar Dene"
+                        app:icon="@drawable/ic_refresh" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

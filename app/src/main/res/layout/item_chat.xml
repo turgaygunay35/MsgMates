@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_person"
+        android:background="@drawable/bg_circle_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_online_status"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_circle"
+        android:background="@drawable/bg_online_status"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/iv_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/iv_avatar" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="Kullanıcı Adı"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"
+        app:layout_constraintEnd_toStartOf="@id/tv_timestamp" />
+
+    <TextView
+        android:id="@+id/tv_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18:30"
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_last_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:text="Son mesaj burada görünür..."
+        android:textSize="14sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        app:layout_constraintEnd_toStartOf="@id/tv_unread_count" />
+
+    <TextView
+        android:id="@+id/tv_unread_count"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:text="5"
+        android:textSize="12sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_unread_badge"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_timestamp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_last_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

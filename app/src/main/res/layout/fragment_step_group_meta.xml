@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_appbar_gradient"
+            android:title="Grup Bilgileri"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:titleTextColor="@color/textPrimaryDark" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Grup Avatar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="32dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_group_avatar"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_group"
+                    app:civ_border_width="4dp"
+                    app:civ_border_color="@color/primary_blue" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_change_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Değiştir"
+                    android:layout_marginTop="12dp"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            </LinearLayout>
+
+            <!-- Grup Adı -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Grup adı"
+                android:layout_marginBottom="16dp"
+                app:startIconDrawable="@drawable/ic_group"
+                app:helperText="En az 2 karakter olmalı"
+                app:helperTextEnabled="true"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_group_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="50" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Grup Açıklaması (Opsiyonel) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_group_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Grup açıklaması (opsiyonel)"
+                android:layout_marginBottom="32dp"
+                app:startIconDrawable="@drawable/ic_edit"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_group_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:maxLength="200" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Navigation Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Geri"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="İleri"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            style="@style/Widget.Material3.Button" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+

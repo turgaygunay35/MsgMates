@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/ic_permission_contacts"
+        android:contentDescription="@string/permission_contacts_description"
+        app:tint="?attr/colorOnSurfaceVariant" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/permission_contacts_title"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:textColor="?attr/colorOnSurface"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/permission_contacts_subtitle"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:gravity="center" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonGrantPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/grant_permission"
+        android:drawableStart="@drawable/ic_permission"
+        android:drawablePadding="8dp"
+        style="@style/Widget.Material3.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonOpenSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_settings"
+        android:drawableStart="@drawable/ic_settings"
+        android:drawablePadding="8dp"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+</LinearLayout>
+

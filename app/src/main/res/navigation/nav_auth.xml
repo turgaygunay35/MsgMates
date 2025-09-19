@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/dest_phone_entry">
+
+    <!-- Phone Entry (Start) -->
+    <fragment
+        android:id="@+id/dest_phone_entry"
+        android:name="com.msgmates.app.ui.auth.phone.PhoneEntryFragment"
+        android:label="@string/phone_entry_title"
+        tools:layout="@layout/fragment_phone_entry">
+
+        <!-- Kodun çağırdığı Safe Args action:
+             PhoneEntryFragmentDirections.actionPhoneEntryToOtpVerify(phoneNumber) -->
+        <action
+            android:id="@+id/action_phone_entry_to_otp_verify"
+            app:destination="@id/dest_otp" />
+
+        <!-- (Opsiyonel) Kullanım Koşulları -->
+        <action
+            android:id="@+id/action_phone_to_terms"
+            app:destination="@id/dest_terms_of_service" />
+    </fragment>
+
+    <!-- OTP Verify -->
+    <fragment
+        android:id="@+id/dest_otp"
+        android:name="com.msgmates.app.ui.auth.otp.OtpVerifyFragment"
+        android:label="@string/otp_verify_title"
+        tools:layout="@layout/fragment_otp">
+
+        <!-- YALNIZCA tek argüman: phoneNumber -->
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+    </fragment>
+
+    <!-- (Opsiyonel) Terms of Service -->
+    <fragment
+        android:id="@+id/dest_terms_of_service"
+        android:name="com.msgmates.app.ui.auth.TermsOfServiceFragment"
+        android:label="Kullanıcı Koşulları"
+        tools:layout="@layout/fragment_terms_of_service" />
+
+    <!-- (Opsiyonel) Afet Modu -->
+    <fragment
+        android:id="@+id/dest_disaster_mode"
+        android:name="com.msgmates.app.ui.disaster.DisasterModeFragment"
+        android:label="Afet Modu"
+        tools:layout="@layout/fragment_disaster_mode" />
+
+</navigation>

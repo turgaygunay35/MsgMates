@@ -1,0 +1,34 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Not iÃ§eriÄŸi -->
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:paddingEnd="8dp"/>
+
+        <!-- Silme butonu -->
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_delete"
+            android:contentDescription="@string/menu_arsiv"
+            android:tint="@android:color/holo_red_dark"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

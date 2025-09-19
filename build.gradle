@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application' version '8.5.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.24' apply false
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.24' apply false
+    id 'androidx.navigation.safeargs.kotlin' version '2.7.7' apply false
+    id 'com.google.dagger.hilt.android' version '2.48' apply false
+}
+
+// --- BEGIN: Fix duplicate androidx.annotation.experimental.R ---
+allprojects {
+    configurations.all {
+        exclude group: "androidx.annotation", module: "annotation-experimental"
+        resolutionStrategy.force "androidx.annotation:annotation:1.7.1"
+    }
+}
+// --- END: Fix duplicate androidx.annotation.experimental.R ---

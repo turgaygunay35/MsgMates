@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation -->
+    <string name="nav_chats">Chats</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_journal">Journal</string>
+    <string name="nav_menu">Menu</string>
+    
+    <!-- Journal Strings -->
+    <string name="journal_title">My Journal</string>
+    <string name="journal_add_entry">Add New Entry</string>
+    <string name="add_journal_entry">Add New Entry</string>
+    <string name="journal_edit_entry">Edit Entry</string>
+    <string name="journal_delete_entry">Delete Entry</string>
+    <string name="journal_archive_entry">Archive Entry</string>
+    <string name="journal_restore_entry">Restore Entry</string>
+    <string name="journal_share_entry">Share Entry</string>
+    <string name="journal_favorite">Add to Favorites</string>
+    <string name="journal_unfavorite">Remove from Favorites</string>
+    
+    <!-- Journal Form -->
+    <string name="journal_hint_title">Title</string>
+    <string name="journal_hint_content">How was your day?</string>
+    <string name="journal_hint_tags">Tags (separate with commas)</string>
+    <string name="journal_add_photo">Add Photo</string>
+    <string name="journal_select_mood">Select Mood</string>
+    <string name="journal_save">Save</string>
+    <string name="journal_cancel">Cancel</string>
+    <string name="journal_delete">Delete</string>
+    
+    <!-- Journal Validation -->
+    <string name="journal_error_title_required">Title is required</string>
+    <string name="journal_error_content_required">Content is required</string>
+    <string name="journal_error_title_too_long">Title too long (maximum 100 characters)</string>
+    <string name="journal_error_content_too_long">Content too long (maximum 5000 characters)</string>
+    
+    <!-- Journal Empty State -->
+    <string name="empty_journal_title">No journal entries yet</string>
+    <string name="empty_journal_subtitle">Tap the + button to create your first entry</string>
+    <string name="empty_journal_description">Empty journal state</string>
+    
+    <!-- Archive Empty State -->
+    <string name="empty_archive_title">No archived entries</string>
+    <string name="empty_archive_subtitle">No archived journal entries found</string>
+    <string name="empty_archive_description">Empty archive state</string>
+    
+    <!-- Journal Search -->
+    <string name="search_hint">Search in journal...</string>
+    <string name="search_no_results">No results found</string>
+    
+    <!-- Journal Filter -->
+    <string name="filter_title">Filter</string>
+    <string name="filter_all">All</string>
+    <string name="filter_favorites">Favorites</string>
+    <string name="filter_archived">Archived</string>
+    <string name="filter_mood">Mood</string>
+    <string name="filter_date">Date</string>
+    <string name="filter_tags">Tags</string>
+    
+    <!-- Journal Sort -->
+    <string name="sort_title">Sort</string>
+    <string name="sort_date_newest">Newest First</string>
+    <string name="sort_date_oldest">Oldest First</string>
+    <string name="sort_title_az">Title A-Z</string>
+    <string name="sort_title_za">Title Z-A</string>
+    
+    <!-- Journal Actions -->
+    <string name="action_filter">Filter</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_multi_select">Multi Select</string>
+    <string name="action_delete_selected">Delete Selected</string>
+    <string name="action_archive_selected">Archive Selected</string>
+    <string name="action_restore_selected">Restore Selected</string>
+    
+    <!-- Journal Moods -->
+    <string name="mood_happy">Happy</string>
+    <string name="mood_sad">Sad</string>
+    <string name="mood_excited">Excited</string>
+    <string name="mood_angry">Angry</string>
+    <string name="mood_calm">Calm</string>
+    <string name="mood_worried">Worried</string>
+    <string name="mood_grateful">Grateful</string>
+    <string name="mood_nostalgic">Nostalgic</string>
+    <string name="mood_hopeful">Hopeful</string>
+    <string name="mood_tired">Tired</string>
+    
+    <!-- Journal Confirmation -->
+    <string name="confirm_delete_title">Delete Journal Entry?</string>
+    <string name="confirm_delete_message">This journal entry will be permanently deleted. This action cannot be undone.</string>
+    <string name="confirm_delete_yes">Yes, Delete</string>
+    <string name="confirm_delete_no">Cancel</string>
+    
+    <string name="confirm_archive_title">Archive Journal Entry?</string>
+    <string name="confirm_archive_message">This journal entry will be archived and removed from the main list.</string>
+    <string name="confirm_archive_yes">Yes, Archive</string>
+    <string name="confirm_archive_no">Cancel</string>
+    
+    <string name="confirm_restore_title">Restore Journal Entry?</string>
+    <string name="confirm_restore_message">This journal entry will be restored and added back to the main list.</string>
+    <string name="confirm_restore_yes">Yes, Restore</string>
+    <string name="confirm_restore_no">Cancel</string>
+    
+    <!-- Journal Additional Strings -->
+    <string name="journal_photos">Photos</string>
+    <string name="journal_tags">Tags</string>
+    <string name="remove_photo">Remove Photo</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="no_photos">No photos yet</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <!-- Common -->
+    <string name="app_name">MsgMates</string>
+</resources>

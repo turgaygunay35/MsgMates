@@ -1,0 +1,10 @@
+<resources>
+    <!-- Afet modu Ã¶zel -->
+    <color name="dm_alive_bg">#FF3DDC84</color>
+    <color name="dm_card_bg">#FFF2F4F7</color>
+
+    <!-- Gradyan renkler -->
+    <color name="mm_grad_start">#FF0093E9</color>
+    <color name="mm_grad_mid">#FF00B8D4</color>
+    <color name="mm_grad_end">#FF00E6A7</color>
+</resources>

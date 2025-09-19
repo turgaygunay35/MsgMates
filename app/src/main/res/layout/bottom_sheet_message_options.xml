@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mesaj Seçenekleri"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Options List -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Mark as Read -->
+        <LinearLayout
+            android:id="@+id/option_mark_read"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_mark_read"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Okundu olarak işaretle" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Okundu olarak işaretle"
+                android:textSize="16sp"
+                android:textColor="@color/textPrimary" />
+
+        </LinearLayout>
+
+        <!-- Mute -->
+        <LinearLayout
+            android:id="@+id/option_mute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_notifications_off"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Sessize al" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sessize al"
+                android:textSize="16sp"
+                android:textColor="@color/textPrimary" />
+
+        </LinearLayout>
+
+        <!-- Star -->
+        <LinearLayout
+            android:id="@+id/option_star"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_star_outline"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Favorilere ekle" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Favorilere ekle"
+                android:textSize="16sp"
+                android:textColor="@color/textPrimary" />
+
+        </LinearLayout>
+
+        <!-- Archive -->
+        <LinearLayout
+            android:id="@+id/option_archive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_archive"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Arşivle" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Arşivle"
+                android:textSize="16sp"
+                android:textColor="@color/textPrimary" />
+
+        </LinearLayout>
+
+        <!-- Delete -->
+        <LinearLayout
+            android:id="@+id/option_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_delete"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Sil" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sil"
+                android:textSize="16sp"
+                android:textColor="@color/error" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

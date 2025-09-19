@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/dest_chats">
+
+    <!-- Main destination ID for auth navigation -->
+    <fragment
+        android:id="@+id/dest_main"
+        android:name="com.msgmates.app.ui.main.MainActivity"
+        android:label="MsgMates" />
+    
+    <!-- AUTH ZORUNLU: Bu graph sadece authenticated kullanıcılar için -->
+
+    <!-- Ana Bottom Navigation Ekranları -->
+    <fragment
+        android:id="@+id/dest_chats"
+        android:name="com.msgmates.app.ui.chats.ChatsFragment"
+        android:label="Sohbetler"
+        tools:layout="@layout/fragment_chats" />
+
+    <fragment
+        android:id="@+id/dest_contacts"
+        android:name="com.msgmates.app.ui.contacts.ContactsFragment"
+        android:label="Kişiler"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_contacts_to_chatDetail"
+            app:destination="@id/dest_chat_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dest_journal"
+        android:name="com.msgmates.app.ui.journal.JournalFragment"
+        android:label="Günlük"
+        tools:layout="@layout/fragment_journal" />
+
+    <fragment
+        android:id="@+id/dest_journal_add"
+        android:name="com.msgmates.app.ui.journal.JournalAddFragment"
+        android:label="Hikaye Ekle"
+        tools:layout="@layout/fragment_journal_add" />
+
+    <fragment
+        android:id="@+id/dest_menu"
+        android:name="com.msgmates.app.ui.menu.MenuFragment"
+        android:label="Menü"
+        tools:layout="@layout/fragment_menu" />
+
+    <!-- Chat Detail -->
+    <fragment
+        android:id="@+id/dest_chat_detail"
+        android:name="com.msgmates.app.ui.chats.ChatDetailFragment"
+        android:label="Sohbet"
+        tools:layout="@layout/fragment_chat_detail">
+        <argument
+            android:name="conversationId"
+            app:argType="string" />
+        <argument
+            android:name="conversationName"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Group Creation -->
+    <fragment
+        android:id="@+id/dest_create_group"
+        android:name="com.msgmates.app.ui.groups.CreateGroupFragment"
+        android:label="Grup Oluştur"
+        tools:layout="@layout/fragment_create_group" />
+
+    <!-- Daily Share -->
+    <fragment
+        android:id="@+id/dest_daily_share"
+        android:name="com.msgmates.app.ui.daily.DailyShareFragment"
+        android:label="Günlük Paylaş"
+        tools:layout="@layout/fragment_daily_share" />
+
+    <!-- Settings -->
+    <fragment
+        android:id="@+id/dest_settings"
+        android:name="com.msgmates.app.ui.settings.SettingsFragment"
+        android:label="Ayarlar"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_profile"
+            app:destination="@id/dest_settings_profile" />
+        <action
+            android:id="@+id/action_settings_to_general"
+            app:destination="@id/dest_settings_general" />
+        <action
+            android:id="@+id/action_settings_to_messages"
+            app:destination="@id/dest_settings_messages" />
+        <action
+            android:id="@+id/action_settings_to_privacy"
+            app:destination="@id/dest_settings_privacy" />
+        <action
+            android:id="@+id/action_settings_to_security"
+            app:destination="@id/dest_settings_security" />
+        <action
+            android:id="@+id/action_settings_to_notifications"
+            app:destination="@id/dest_settings_notifications" />
+        <action
+            android:id="@+id/action_settings_to_theme"
+            app:destination="@id/dest_settings_theme" />
+        <action
+            android:id="@+id/action_settings_to_language"
+            app:destination="@id/dest_settings_language" />
+        <action
+            android:id="@+id/action_settings_to_statistics"
+            app:destination="@id/dest_settings_statistics" />
+        <action
+            android:id="@+id/action_settings_to_help"
+            app:destination="@id/dest_settings_help" />
+    </fragment>
+
+    <!-- Settings Sub-screens -->
+                <fragment
+                    android:id="@+id/dest_settings_profile"
+                    android:name="com.msgmates.app.ui.settings.profile.ProfileFragment"
+                    android:label="Profil"
+                    tools:layout="@layout/fragment_profile">
+                    <action
+                        android:id="@+id/action_profile_to_qr_share"
+                        app:destination="@id/dest_qr_share" />
+                    <action
+                        android:id="@+id/action_profile_to_share_settings"
+                        app:destination="@id/dest_share_settings" />
+                </fragment>
+
+                <fragment
+                    android:id="@+id/dest_settings_messages"
+                    android:name="com.msgmates.app.ui.settings.messages.MessagesFragment"
+                    android:label="Mesajlar"
+                    tools:layout="@layout/fragment_messages">
+                    <action
+                        android:id="@+id/action_messages_to_privacy"
+                        app:destination="@id/dest_settings_privacy" />
+                    <action
+                        android:id="@+id/action_messages_to_archive_cleanup"
+                        app:destination="@id/dest_archive_cleanup" />
+                </fragment>
+
+    <fragment
+        android:id="@+id/dest_settings_general"
+        android:name="com.msgmates.app.ui.settings.general.GeneralFragment"
+        android:label="Genel"
+        tools:layout="@layout/fragment_general" />
+
+    <fragment
+        android:id="@+id/dest_settings_messages"
+        android:name="com.msgmates.app.ui.settings.messages.MessagesFragment"
+        android:label="Mesajlar"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/dest_settings_privacy"
+        android:name="com.msgmates.app.ui.settings.privacy.PrivacyFragment"
+        android:label="Gizlilik"
+        tools:layout="@layout/fragment_privacy" />
+
+    <fragment
+        android:id="@+id/dest_settings_security"
+        android:name="com.msgmates.app.ui.settings.security.SecurityFragment"
+        android:label="Güvenlik"
+        tools:layout="@layout/fragment_security" />
+
+    <fragment
+        android:id="@+id/dest_settings_notifications"
+        android:name="com.msgmates.app.ui.settings.notifications.NotificationsFragment"
+        android:label="Bildirimler"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/dest_settings_theme"
+        android:name="com.msgmates.app.ui.settings.theme.ThemeFragment"
+        android:label="Tema"
+        tools:layout="@layout/fragment_theme" />
+
+    <fragment
+        android:id="@+id/dest_settings_language"
+        android:name="com.msgmates.app.ui.settings.language.LanguageFragment"
+        android:label="Dil"
+        tools:layout="@layout/fragment_language" />
+
+    <fragment
+        android:id="@+id/dest_settings_statistics"
+        android:name="com.msgmates.app.ui.settings.statistics.StatisticsFragment"
+        android:label="İstatistikler"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+        android:id="@+id/dest_settings_help"
+        android:name="com.msgmates.app.ui.settings.help.HelpFragment"
+        android:label="Yardım"
+        tools:layout="@layout/fragment_help" />
+
+    <!-- Profile Sub-screens -->
+    <fragment
+        android:id="@+id/dest_qr_share"
+        android:name="com.msgmates.app.ui.settings.profile.QrShareFragment"
+        android:label="QR Kod Paylaş"
+        tools:layout="@layout/fragment_qr_share" />
+
+    <fragment
+        android:id="@+id/dest_share_settings"
+        android:name="com.msgmates.app.ui.settings.profile.ShareSettingsFragment"
+        android:label="Paylaşım Ayarları"
+        tools:layout="@layout/fragment_share_settings" />
+
+    <!-- Messages Sub-screens -->
+    <fragment
+        android:id="@+id/dest_archive_cleanup"
+        android:name="com.msgmates.app.ui.settings.messages.ArchiveCleanupFragment"
+        android:label="Arşiv ve Temizleme"
+        tools:layout="@layout/fragment_archive_cleanup" />
+
+    <!-- Disaster Mode -->
+    <fragment
+        android:id="@+id/dest_disaster_mode"
+        android:name="com.msgmates.app.ui.disaster.DisasterModeFragment"
+        android:label="Afet Modu"
+        tools:layout="@layout/fragment_disaster_mode" />
+
+    <!-- Call Screens -->
+    <fragment
+        android:id="@+id/dest_outgoing_call"
+        android:name="com.msgmates.app.ui.call.OutgoingCallFragment"
+        android:label="Arama"
+        tools:layout="@layout/fragment_outgoing_call" />
+
+    <fragment
+        android:id="@+id/dest_ongoing_call"
+        android:name="com.msgmates.app.ui.call.OngoingCallFragment"
+        android:label="Arama"
+        tools:layout="@layout/fragment_ongoing_call" />
+
+    <!-- Navigation Actions -->
+    <action
+        android:id="@+id/action_chats_to_chat_detail"
+        app:destination="@id/dest_chat_detail" />
+
+    <action
+        android:id="@+id/action_chats_to_create_group"
+        app:destination="@id/dest_create_group" />
+
+    <action
+        android:id="@+id/action_chats_to_daily_share"
+        app:destination="@id/dest_daily_share" />
+
+    <action
+        android:id="@+id/action_menu_to_settings"
+        app:destination="@id/dest_settings" />
+
+    <action
+        android:id="@+id/action_chats_to_outgoing_call"
+        app:destination="@id/dest_outgoing_call" />
+
+    <action
+        android:id="@+id/action_outgoing_call_to_ongoing_call"
+        app:destination="@id/dest_ongoing_call" />
+
+</navigation>

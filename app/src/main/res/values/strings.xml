@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns0="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns1="http://schemas.android.com/tools">
+
+    <!-- Contacts Settings -->
+    <string name="highlight_msgmates_users">Highlight MsgMates Users</string>
+    <string name="highlight_msgmates_users_desc">Show MsgMates users with special highlighting</string>
+    <string name="sync_only_wifi">Sync Only WiFi</string>
+    <string name="sync_period">Sync Period</string>
+    <string name="sync_hourly">Hourly</string>
+    <string name="sync_daily">Daily</string>
+    <string name="sync_off">Off</string>
+    <string name="sync_only_wifi_desc">Reduce mobile data usage</string>
+
+    <!-- Journal Module -->
+    <string name="journal_share_daily">Günlük Paylaş</string>
+    <string name="menu_create_group">Grup Kur</string>
+
+    <!-- Auth Flow Strings -->
+    <string name="title_phone_login">Telefon Numaranla Giriş Yap</string>
+    <string name="phone_entry_title">Telefon Numaranla Giriş Yap</string>
+    <string name="phone_entry_subtitle">Telefon numaranı gir, sana doğrulama kodu gönderelim</string>
+    <string name="phone_entry_hint">05XXXXXXXXX</string>
+    <string name="phone_entry_helper">11 haneli Türk GSM numarası girin</string>
+    <string name="action_send_code">Kodu Gönder</string>
+    <string name="phone_entry_send_code">Kodu Gönder</string>
+    <string name="label_terms">Kullanıcı Koşulları\'nı okudum ve kabul ediyorum</string>
+    <string name="phone_entry_logo_desc">MsgMates logosu</string>
+    <string name="phone_entry_input_desc">Telefon numarası girişi</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="terms_dialog_title">Kullanıcı Koşulları</string>
+    <string name="terms_dialog_content">Bu uygulamayı kullanarak aşağıdaki koşulları kabul etmiş olursunuz:\n\n1. Kişisel verileriniz güvenli şekilde işlenir\n2. Mesajlaşma içerikleriniz şifrelenir\n3. Verileriniz üçüncü taraflarla paylaşılmaz\n4. Hesabınızı istediğiniz zaman silebilirsiniz\n\nDetaylı bilgi için gizlilik politikamızı inceleyebilirsiniz.</string>
+
+    <string name="title_otp_verify">Kodu Doğrula</string>
+    <string name="otp_verify_title">Kodu Doğrula</string>
+    <string name="otp_verify_hint">6 haneli kod</string>
+    <string name="otp_verify_helper">SMS ile gönderilen 6 haneli kodu gir</string>
+    <string name="action_verify">Doğrula</string>
+    <string name="action_resend_code">Kodu Tekrar Gönder</string>
+    <string name="otp_verify_icon_desc">Güvenlik ikonu</string>
+    <string name="otp_verify_input_desc">Doğrulama kodu girişi</string>
+    <string name="otp_countdown">%1$02d:%2$02d içinde kodu tekrar gönder</string>
+    <string name="otp_countdown_finished">Kodu tekrar gönderebilirsiniz</string>
+    
+    <!-- Error Messages -->
+    <string name="error_invalid_tr_phone">Lütfen 05 ile başlayan 11 haneli bir Türk GSM numarası girin.</string>
+    <string name="error_terms_required">Devam etmek için Kullanıcı Koşulları\'nı kabul etmelisiniz.</string>
+    <string name="error_otp_invalid">Doğrulama kodu hatalı. Lütfen tekrar deneyin.</string>
+    <string name="error_otp_expired">Kodun süresi doldu. Yeniden kod isteyin.</string>
+    <string name="error_otp_too_many_attempts">Çok fazla başarısız deneme. 30 saniye bekleyin.</string>
+    <string name="error_network">Ağ bağlantısı hatası. Lütfen tekrar deneyin.</string>
+    <string name="error_generic">Bir hata oluştu. Lütfen tekrar deneyin.</string>
+    
+    <!-- Success Messages -->
+    <string name="msg_code_sent">Doğrulama kodu gönderildi.</string>
+    <string name="msg_verification_success">Doğrulama başarılı!</string>
+
+    <!-- Accessibility strings -->
+    <string name="accessibility_send_message">Mesaj gönder</string>
+    <string name="accessibility_attach_file">Dosya ekle</string>
+    <string name="accessibility_record_audio">Sesli not kaydet</string>
+    <string name="accessibility_play_audio">Sesli notu oynat</string>
+    <string name="accessibility_download_file">Dosyayı indir</string>
+    <string name="accessibility_call_audio">Sesli arama yap</string>
+    <string name="accessibility_call_video">Görüntülü arama yap</string>
+    <string name="accessibility_filter_chip">Filtre: %1$s</string>
+    <string name="accessibility_unread_count">Okunmamış mesaj sayısı: %1$d</string>
+    <string name="accessibility_typing_indicator">%1$s yazıyor</string>
+    <string name="accessibility_message_status">Mesaj durumu: %1$s</string>
+    <string name="accessibility_three_dots_menu">Daha fazla seçenek</string>
+    <string name="accessibility_search">Ara</string>
+    <string name="accessibility_quick_actions">Hızlı işlemler</string>
+
+    <!-- Chat Detail -->
+    <string name="type_message">Mesaj yazın...</string>
+    <string name="send_message">Gönder</string>
+    <string name="attach_file">Dosya ekle</string>
+    <string name="record_voice">Sesli not kaydet</string>
+    <string name="recording">Kaydediliyor...</string>
+    <string name="release_to_send">Göndermek için bırakın</string>
+
+    <!-- Archive -->
+    <string name="archive_title">Arşiv</string>
+
+    <!-- Disaster -->
+    <string name="disaster_switch">Afet Yayını</string>
+    <string name="disaster_title">Afet Modu</string>
+
+    <!-- Capsule -->
+    <string name="caps_add">Kapsül Ekle</string>
+    <string name="caps_edit">Kapsülü Kaydet</string>
+    <string name="caps_empty">Kapsül yok.</string>
+    <string name="caps_error_past">Geçmiş zamana kapsül oluşturulamaz.</string>
+    <string name="caps_hint_body">Mesaj</string>
+    <string name="caps_hint_title">Başlık</string>
+    <string name="caps_pick_date">Tarih Seç</string>
+    <string name="caps_pick_time">Saat Seç</string>
+    <string name="caps_title">Mesaj Kapsülü</string>
+
+    <!-- Contacts -->
+    <string name="contact_card">Kişi kartı</string>
+    <string name="contact_detail">Kişi Detayı</string>
+    <string name="contacts_title">Kişiler</string>
+
+    <!-- Common -->
+    <string name="app_name">MsgMates</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="refresh">Refresh</string>
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="warning">Warning</string>
+    <string name="info">Info</string>
+
+    <!-- Navigation -->
+    <string name="nav_chats">Chats</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_journal">Journal</string>
+    <string name="nav_menu">Menu</string>
+
+    <!-- Menu -->
+    <string name="menu_title">Menü</string>
+    <string name="menu_ayarlar">Ayarlar</string>
+    <string name="menu_afet_modu">Afet Modu</string>
+    <string name="menu_webmsgmates">WebMsgMates</string>
+    <string name="menu_mesaj_kapsulu">Mesaj Kapsülü</string>
+    <string name="menu_kisa_notlar">Kısa Notlar</string>
+    <string name="menu_arsiv">Arşiv</string>
+    <string name="menu_bos_slot">Boş Slot</string>
+
+    <!-- Missing strings from build errors -->
+    <string name="qa_broadcast">Broadcast</string>
+    <string name="status_disaster">Disaster</string>
+    <string name="menu_new">New</string>
+    <string name="qa_self_note">Self Note</string>
+    <string name="qa_new_chat">New Chat</string>
+    <string name="qa_add_by_qr">Add by QR</string>
+    <string name="status_live">Live</string>
+    <string name="status_offline">Offline</string>
+    <string name="status_sync">Sync</string>
+    <string name="menu_video_call">Video Call</string>
+    <string name="menu_voice_call">Voice Call</string>
+    
+    <!-- App Lock -->
+    <string name="lock_pin_hint">PIN Girin</string>
+    <string name="lock_set_pin">PIN Belirle</string>
+    <string name="lock_unlock">Kilidi Aç</string>
+    
+    <!-- Main Activity -->
+    <string name="title_msgmates">MsgMates</string>
+    <string name="hint_search_chats">Sohbetlerde ara...</string>
+    <string name="refresh_contacts">Kişileri Yenile</string>
+    <string name="quick_actions">Hızlı İşlemler</string>
+    <string name="cd_filter_chip">Filtre: %1$s</string>
+    <string name="filter_all">Tümü</string>
+    <string name="filter_unread">Okunmamış</string>
+    <string name="filter_groups">Gruplar</string>
+    <string name="filter_favorites">Favoriler</string>
+    
+    <!-- Journal Module -->
+    <string name="action_archive_selected">Seçilenleri Arşivle</string>
+    <string name="action_delete_selected">Seçilenleri Sil</string>
+    <string name="action_filter">Filtrele</string>
+    <string name="action_multi_select">Çoklu Seçim</string>
+    <string name="action_restore_selected">Seçilenleri Geri Yükle</string>
+    <string name="action_sort">Sırala</string>
+    <string name="add_journal_entry">Günlük Ekle</string>
+    <string name="add_photo">Fotoğraf Ekle</string>
+    <string name="confirm_archive_message">Seçilen girişleri arşivlemek istediğinizden emin misiniz?</string>
+    <string name="confirm_archive_no">Hayır</string>
+    <string name="confirm_archive_title">Arşivle</string>
+    <string name="confirm_archive_yes">Evet</string>
+    <string name="confirm_delete_message">Seçilen girişleri silmek istediğinizden emin misiniz?</string>
+    <string name="confirm_delete_no">Hayır</string>
+    <string name="confirm_delete_title">Sil</string>
+    <string name="confirm_delete_yes">Evet</string>
+    <string name="confirm_restore_message">Seçilen girişleri geri yüklemek istediğinizden emin misiniz?</string>
+    <string name="confirm_restore_no">Hayır</string>
+    <string name="confirm_restore_title">Geri Yükle</string>
+    <string name="confirm_restore_yes">Evet</string>
+    <string name="empty_archive_description">Arşivlenmiş giriş yok</string>
+    <string name="empty_archive_subtitle">Arşivlenmiş girişler burada görünür</string>
+    <string name="empty_archive_title">Arşiv Boş</string>
+    <string name="empty_journal_description">Henüz giriş yok</string>
+    <string name="empty_journal_subtitle">İlk girişinizi oluşturun</string>
+    <string name="empty_journal_title">Günlük Boş</string>
+    <string name="filter_archived">Arşivlenmiş</string>
+    <string name="filter_date">Tarih</string>
+    <string name="filter_mood">Ruh Hali</string>
+    <string name="filter_tags">Etiketler</string>
+    <string name="filter_title">Başlık</string>
+    <string name="journal_add_entry">Giriş Ekle</string>
+    <string name="journal_add_photo">Fotoğraf Ekle</string>
+    <string name="journal_archive_entry">Arşivle</string>
+    <string name="journal_cancel">İptal</string>
+    <string name="journal_delete">Sil</string>
+    <string name="journal_delete_entry">Girişi Sil</string>
+    <string name="journal_edit_entry">Girişi Düzenle</string>
+    <string name="journal_error_content_required">İçerik gerekli</string>
+    <string name="journal_error_content_too_long">İçerik çok uzun</string>
+    <string name="journal_error_title_required">Başlık gerekli</string>
+    <string name="journal_error_title_too_long">Başlık çok uzun</string>
+    <string name="journal_favorite">Favorile</string>
+    <string name="journal_hint_content">İçerik yazın...</string>
+    <string name="journal_hint_tags">Etiketler (virgülle ayırın)</string>
+    <string name="journal_hint_title">Başlık</string>
+    <string name="journal_photos">Fotoğraflar</string>
+    <string name="journal_restore_entry">Geri Yükle</string>
+    <string name="journal_save">Kaydet</string>
+    <string name="journal_select_mood">Ruh Hali Seç</string>
+    <string name="journal_share_entry">Paylaş</string>
+    <string name="journal_tags">Etiketler</string>
+    <string name="journal_title">Günlük</string>
+    <string name="journal_unfavorite">Favorilerden Çıkar</string>
+    <string name="mood_angry">Kızgın</string>
+    <string name="mood_calm">Sakin</string>
+    <string name="mood_excited">Heyecanlı</string>
+    <string name="mood_grateful">Müteşekkir</string>
+    <string name="mood_happy">Mutlu</string>
+    <string name="mood_hopeful">Umutlu</string>
+    <string name="mood_nostalgic">Nostaljik</string>
+    <string name="mood_sad">Üzgün</string>
+    <string name="mood_tired">Yorgun</string>
+    <string name="mood_worried">Endişeli</string>
+    <string name="no_photos">Fotoğraf yok</string>
+    <string name="remove_photo">Fotoğrafı Kaldır</string>
+    <string name="search_hint">Ara...</string>
+    <string name="search_no_results">Sonuç bulunamadı</string>
+    <string name="select_photo">Fotoğraf Seç</string>
+    <string name="sort_date_newest">En Yeni</string>
+    <string name="sort_date_oldest">En Eski</string>
+    <string name="sort_title">Başlık</string>
+    <string name="sort_title_az">A-Z</string>
+    <string name="sort_title_za">Z-A</string>
+    <string name="take_photo">Fotoğraf Çek</string>
+    
+    <!-- Additional missing strings -->
+    <string name="filter_disaster">Afet</string>
+    <string name="journal_muted_list_title">Susturulan Kullanıcılar</string>
+    <string name="journal_watched_list_title">İzlenen Kullanıcılar</string>
+    <string name="filter_move_up">Yukarı Taşı</string>
+    <string name="filter_move_down">Aşağı Taşı</string>
+    <string name="filter_hide">Gizle</string>
+    <string name="quick_actions_title">Hızlı İşlemler</string>
+    <string name="daily_share">Günlük Paylaş</string>
+    <string name="daily_share_description">Günlük girişini paylaş</string>
+    <string name="create_group">Grup Oluştur</string>
+    <string name="create_group_description">Yeni grup oluştur</string>
+    <string name="daily_bar_title">Günlük</string>
+    <string name="daily_bar_subtitle">Bugün nasılsın?</string>
+    <string name="msgmates_user">MsgMates Kullanıcısı</string>
+    <string name="phone_numbers">Telefon Numaraları</string>
+    <string name="action_call">Ara</string>
+    <string name="action_video_call">Görüntülü Ara</string>
+    <string name="invite_to_msgmates">MsgMates\'e Davet Et</string>
+    <string name="send_disaster_message">Afet Mesajı Gönder</string>
+    <string name="toggle_favorite">Favorilere Ekle/Çıkar</string>
+    
+    <!-- More missing strings -->
+    <string name="contacts_settings">Kişi Ayarları</string>
+    <string name="group_info">Grup Bilgisi</string>
+    <string name="group_name">Grup Adı</string>
+    <string name="group_description">Grup Açıklaması</string>
+    <string name="selected_members">Seçilen Üyeler</string>
+    <string name="select_members">Üye Seç</string>
+    <string name="search_contacts">Kişilerde Ara</string>
+    <string name="daily_share_subtitle">Günlük girişini paylaş</string>
+    <string name="select_video">Video Seç</string>
+    <string name="video_duration_limit">Video süre sınırı</string>
+    <string name="video_info">Video Bilgisi</string>
+    <string name="duration">Süre</string>
+    <string name="size">Boyut</string>
+    <string name="add_description">Açıklama Ekle</string>
+    <string name="share">Paylaş</string>
+    <string name="qn_hint_title">Başlık</string>
+    <string name="qn_hint_body">Not içeriği</string>
+    <string name="qn_edit">Notu Düzenle</string>
+    <string name="game_turn_you">Sıra sizde</string>
+    
+    <!-- Final missing strings -->
+    <string name="game_btn_reset">Sıfırla</string>
+    <string name="qn_add">Not Ekle</string>
+    <string name="title_password_login">Şifre ile Giriş</string>
+    <string name="hint_password">Şifre</string>
+    <string name="action_continue">Devam Et</string>
+    <string name="placeholder_title_devices">Cihazlar</string>
+    <string name="placeholder_body_generic">İçerik yok</string>
+    <string name="qn_hint">Not yazın...</string>
+    <string name="qn_empty">Not yok</string>
+    <string name="tos_text">Kullanım Şartları</string>
+    <string name="tos_accept_check">Kabul ediyorum</string>
+    <string name="accept_">Kabul Et</string>
+    <string name="journal_entry_card">Günlük Girişi</string>
+    <string name="journal_overflow_menu">Daha Fazla</string>
+    <string name="journal_unmute">Susturmayı Kaldır</string>
+    <string name="label_status_online_typing">Yazıyor</string>
+    <string name="empty_contacts_description">Kişi bulunamadı</string>
+    
+    <!-- More missing strings -->
+    <string name="empty_contacts_title">Kişi Yok</string>
+    <string name="empty_contacts_subtitle">Henüz kişi eklenmemiş</string>
+    <string name="loading_contacts">Kişiler yükleniyor...</string>
+    <string name="permission_contacts_description">Kişilerinize erişim için izin gerekli</string>
+    <string name="permission_contacts_title">İzin Gerekli</string>
+    <string name="permission_contacts_subtitle">Kişilerinizi görmek için izin verin</string>
+    <string name="grant_permission">İzin Ver</string>
+    <string name="open_settings">Ayarları Aç</string>
+    <string name="cd_status_capsule">Kapsül Durumu</string>
+    <string name="open_in_system">Sistemde Aç</string>
+    <string name="cd_video_call">Görüntülü Arama</string>
+    <string name="cd_voice_call">Sesli Arama</string>
+    <string name="cd_more">Daha Fazla</string>
+    <string name="menu_more">Daha Fazla</string>
+    <string name="menu_view_profile">Profili Görüntüle</string>
+    <string name="menu_search_in_chat">Sohbette Ara</string>
+    <string name="menu_media_files">Medya Dosyaları</string>
+    <string name="menu_mute_toggle">Sustur/Aç</string>
+    <string name="menu_disappearing">Kaybolan Mesajlar</string>
+    <string name="menu_chat_theme">Sohbet Teması</string>
+    
+    <!-- Menu strings -->
+    <string name="menu_report">Raporla</string>
+    <string name="menu_block">Engelle</string>
+    <string name="action_disaster_message">Afet Mesajı</string>
+    <string name="cd_search">Ara</string>
+    <string name="menu_search">Ara</string>
+    <string name="cd_new_actions">Yeni İşlemler</string>
+    <string name="menu_devices">Cihazlar</string>
+    <string name="menu_starred">Yıldızlı</string>
+    <string name="menu_archive">Arşiv</string>
+    <string name="menu_settings">Ayarlar</string>
+    <string name="menu_switch_account">Hesap Değiştir</string>
+    <string name="menu_help_feedback">Yardım &amp; Geri Bildirim</string>
+    <string name="menu_about">Hakkında</string>
+    <string name="journal_mute">Sustur</string>
+    
+    <!-- Notification strings -->
+    <string name="notif_channel_calls">Aramalar</string>
+    <string name="notif_channel_calls_description">Gelen arama bildirimleri</string>
+    <string name="notif_channel_messages">Mesajlar</string>
+    <string name="notif_channel_messages_description">Gelen mesaj bildirimleri</string>
+    <string name="notif_channel_general">Genel</string>
+    <string name="notif_channel_general_description">Genel uygulama bildirimleri</string>
+    <string name="notif_channel_ble">Bluetooth</string>
+    <string name="notif_ble_title">Bluetooth Bağlantısı</string>
+    <string name="notif_ble_text">Bluetooth cihazına bağlanıyor</string>
+    <string name="notif_caps_channel">Kapsüller</string>
+    
+    <!-- Placeholder titles -->
+    <string name="placeholder_title_block">Engelle</string>
+    <string name="placeholder_title_chat_search">Sohbette Ara</string>
+    <string name="placeholder_title_chat_theme">Sohbet Teması</string>
+    <string name="placeholder_title_disappearing">Kaybolan Mesajlar</string>
+    <string name="placeholder_title_media_files">Medya Dosyaları</string>
+    <string name="placeholder_title_profile">Profil</string>
+    <string name="placeholder_title_report">Raporla</string>
+    <string name="placeholder_title_about">Hakkında</string>
+    <string name="placeholder_title_archive">Arşiv</string>
+    <string name="placeholder_title_help">Yardım</string>
+    <string name="placeholder_title_settings">Ayarlar</string>
+    <string name="placeholder_title_starred">Yıldızlı Mesajlar</string>
+    <string name="placeholder_title_switch_account">Hesap Değiştir</string>
+    
+    <!-- Status strings -->
+    <string name="muted">Susturuldu</string>
+    <string name="unmuted">Susturma Kaldırıldı</string>
+    <string name="call_active">Aktif Arama</string>
+
+</resources>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/journal_primary"
+            app:title="@string/journal_title"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:menu="@menu/journal_detail_menu" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/journal_padding_medium">
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:visibility="gone" />
+
+            <!-- Title Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_padding_medium"
+                app:cardCornerRadius="@dimen/journal_card_corner_radius"
+                app:cardElevation="@dimen/journal_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/journal_card_padding">
+
+                    <TextView
+                        android:id="@+id/textTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                        android:textColor="@color/journal_text_primary"
+                        tools:text="Bugün harika bir gün" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/journal_padding_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                            android:textColor="@color/journal_text_secondary"
+                            tools:text="15 Aralık 2024, 14:30" />
+
+                        <TextView
+                            android:id="@+id/textMood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/journal_padding_small"
+                            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                            android:visibility="gone"
+                            tools:text="😊"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Content Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_padding_medium"
+                app:cardCornerRadius="@dimen/journal_card_corner_radius"
+                app:cardElevation="@dimen/journal_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/journal_card_padding">
+
+                    <TextView
+                        android:id="@+id/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/journal_text_primary"
+                        tools:text="Bugün çok güzel bir gün geçirdim. Sabah erken kalktım ve güneşli havada yürüyüş yaptım. Öğleden sonra arkadaşlarımla buluştum ve harika vakit geçirdik. Akşam da ailemle birlikte güzel bir yemek yedik. Bu günü unutmayacağım." />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tags Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_padding_medium"
+                app:cardCornerRadius="@dimen/journal_card_corner_radius"
+                app:cardElevation="@dimen/journal_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/journal_card_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/journal_padding_small"
+                        android:text="@string/journal_tags"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        android:textColor="@color/journal_text_primary" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#mutlu"
+                            app:chipBackgroundColor="@color/journal_tag_background"
+                            app:chipStrokeColor="@color/journal_tag_text"
+                            android:textColor="@color/journal_tag_text" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#günlük"
+                            app:chipBackgroundColor="@color/journal_tag_background"
+                            app:chipStrokeColor="@color/journal_tag_text"
+                            android:textColor="@color/journal_tag_text" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#aile"
+                            app:chipBackgroundColor="@color/journal_tag_background"
+                            app:chipStrokeColor="@color/journal_tag_text"
+                            android:textColor="@color/journal_tag_text" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Photos Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/journal_padding_medium"
+                app:cardCornerRadius="@dimen/journal_card_corner_radius"
+                app:cardElevation="@dimen/journal_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/journal_card_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/journal_padding_small"
+                        android:text="@string/journal_photos"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        android:textColor="@color/journal_text_primary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewPhotos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        tools:listitem="@layout/item_journal_photo" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

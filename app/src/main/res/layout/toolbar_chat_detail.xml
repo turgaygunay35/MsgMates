@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_chat_detail"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@drawable/bg_appbar_gradient"
+    android:tag="qa_toolbar_detail"
+    app:navigationIcon="@drawable/ic_arrow_back"
+    app:titleTextColor="@color/textPrimaryDark"
+    app:subtitleTextColor="@color/textSecondaryDark">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kullanıcı Adı"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="@color/textPrimaryDark"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_status_online_typing"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/textSecondaryDark"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+    <!-- Call Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="8dp">
+
+        <ImageButton
+            android:id="@+id/btn_audio_call"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_phone"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Sesli Arama"
+            android:layout_marginEnd="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_video_call"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_videocam"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Görüntülü Arama"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <!-- Durum Kapsülü (şimdilik GONE) -->
+    <include
+        android:id="@+id/status_capsule_detail"
+        layout="@layout/view_status_capsule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone" />
+
+</com.google.android.material.appbar.MaterialToolbar>

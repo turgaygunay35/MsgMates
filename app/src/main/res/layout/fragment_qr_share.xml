@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_blue"
+        app:title="QR Kod Paylaş"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- QR Code Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profil QR Kodu"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_qr_code"
+                        android:layout_width="256dp"
+                        android:layout_height="256dp"
+                        android:background="@drawable/bg_circle_accent"
+                        android:contentDescription="QR Code"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QR kod oluşturmak için aşağıdaki butona basın"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:layout_marginTop="16dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_generate_qr"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="QR Kod Oluştur"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/primary_blue"
+                app:cornerRadius="12dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                app:icon="@drawable/ic_qr"
+                app:iconTint="@android:color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_share_qr"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="QR Kodu Paylaş"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/secondary_blue"
+                app:cornerRadius="12dp"
+                android:textSize="16sp"
+                android:enabled="false"
+                app:icon="@drawable/ic_share"
+                app:iconTint="@android:color/white" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

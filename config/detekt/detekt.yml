@@ -1,0 +1,304 @@
+build:
+  maxIssues: 0
+  excludeCorrectable: false
+  weights:
+    complexity: 2
+    LongParameterList: 1
+    style: 1
+    comments: 1
+
+config:
+  validation: true
+  warningsAsErrors: false
+  checkExhaustiveness: false
+
+complexity:
+  CognitiveComplexMethod:
+    enabled: true
+    threshold: 15
+  CyclomaticComplexMethod:
+    enabled: true
+    threshold: 15
+  LargeClass:
+    enabled: true
+    threshold: 600
+  LongParameterList:
+    enabled: true
+    functionThreshold: 6
+    constructorThreshold: 7
+  TooManyFunctions:
+    enabled: true
+    thresholdInFiles: 11
+    thresholdInClasses: 11
+    thresholdInInterfaces: 11
+    thresholdInObjects: 11
+    thresholdInEnums: 11
+
+style:
+  ForbiddenComment:
+    enabled: true
+    values: ['FIXME:', 'STOPSHIP:', 'TODO:']
+  MagicNumber:
+    enabled: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/*.Test.kt', '**/*.Spec.kt']
+    ignoreNumbers: ['-1', '0', '1', '2']
+    ignoreHashCodeFunction: true
+    ignorePropertyDeclaration: false
+    ignoreLocalVariableDeclaration: false
+    ignoreConstantDeclaration: true
+  MaxLineLength:
+    enabled: true
+    maxLineLength: 120
+    excludePackageStatements: true
+    excludeImportStatements: true
+    excludeCommentStatements: false
+  WildcardImport:
+    enabled: true
+    excludeImports: ['java.util.*', 'kotlinx.android.synthetic.*']
+  UnusedImports:
+    enabled: true
+  UnusedPrivateMember:
+    enabled: true
+    allowedNames: '(_|ignored|expected|serialVersionUID)'
+  UnusedParameter:
+    enabled: true
+    allowedNames: '(_|ignored|expected)'
+  RedundantSemicolon:
+    enabled: true
+  RedundantVisibilityModifier:
+    enabled: true
+  RedundantModifier:
+    enabled: true
+  RedundantExplicitType:
+    enabled: true
+  RedundantHigherOrderMapUsage:
+    enabled: true
+  RedundantElseInWhen:
+    enabled: true
+  RedundantSuspendModifier:
+    enabled: true
+  RedundantUnitReturnType:
+    enabled: true
+  RedundantVariableDeclaration:
+    enabled: true
+  RedundantVisibilityModifierRule:
+    enabled: true
+  ReturnCount:
+    enabled: true
+    max: 2
+    excludedFunctions: ['equals']
+  SafeCast:
+    enabled: true
+  SerialVersionUIDInSerializableClass:
+    enabled: true
+  SpacingBetweenPackageAndImports:
+    enabled: true
+  StringShouldBeRawString:
+    enabled: true
+    allowedPattern: '^[a-zA-Z0-9\s]*$'
+  TrailingWhitespace:
+    enabled: true
+  TrimMultilineRawString:
+    enabled: true
+  UnderscoresInNumericLiterals:
+    enabled: true
+  UnnecessaryAbstractClass:
+    enabled: true
+  UnnecessaryApply:
+    enabled: true
+  UnnecessaryFilter:
+    enabled: true
+  UnnecessaryInheritance:
+    enabled: true
+  UnnecessaryInnerClass:
+    enabled: true
+  UnnecessaryLet:
+    enabled: true
+  UnnecessaryParentheses:
+    enabled: true
+  UnnecessaryPartOfBinaryExpression:
+    enabled: true
+  UnnecessaryTemporaryInstantiation:
+    enabled: true
+  UnusedUnaryOperator:
+    enabled: true
+  UseAnyOrNoneInsteadOfFind:
+    enabled: true
+  UseArrayLiteralsInAnnotations:
+    enabled: true
+  UseCheckNotNull:
+    enabled: true
+  UseCheckOrError:
+    enabled: true
+  UseDataClass:
+    enabled: true
+  UseEmptyCounterpart:
+    enabled: true
+  UseIfEmptyOrIfBlank:
+    enabled: true
+  UseIfInsteadOfWhen:
+    enabled: true
+  UseIsNullOrEmpty:
+    enabled: true
+  UseOrEmpty:
+    enabled: true
+  UseRequire:
+    enabled: true
+  UseRequireNotNull:
+    enabled: true
+  UseSumOfInsteadOfFlatMapSize:
+    enabled: true
+  UselessCallOnNotNull:
+    enabled: true
+  UtilityClassWithPublicConstructor:
+    enabled: true
+  VarCouldBeVal:
+    enabled: true
+  WrongEqualsTypeParameter:
+    enabled: true
+
+comments:
+  CommentOverPrivateFunction:
+    enabled: true
+  CommentOverPrivateProperty:
+    enabled: true
+  EndOfSentenceFormat:
+    enabled: true
+    endOfSentenceFormat: '([.?!][ \t\n\r\f<])|([.?!:]$)'
+  UndocumentedPublicClass:
+    enabled: true
+  UndocumentedPublicFunction:
+    enabled: true
+  UndocumentedPublicProperty:
+    enabled: true
+
+empty-blocks:
+  EmptyCatchBlock:
+    enabled: true
+    allowedExceptionNameRegex: '_|(ignore|expected).*'
+  EmptyClassBlock:
+    enabled: true
+  EmptyDefaultConstructor:
+    enabled: true
+  EmptyElseBlock:
+    enabled: true
+  EmptyFinallyBlock:
+    enabled: true
+  EmptyForBlock:
+    enabled: true
+  EmptyFunctionBlock:
+    enabled: true
+  EmptyIfBlock:
+    enabled: true
+  EmptyInitBlock:
+    enabled: true
+  EmptyKtFile:
+    enabled: true
+  EmptySecondaryConstructor:
+    enabled: true
+  EmptyTryBlock:
+    enabled: true
+  EmptyWhenBlock:
+    enabled: true
+  EmptyWhileBlock:
+    enabled: true
+
+exceptions:
+  ExceptionRaisedInUnexpectedLocation:
+    enabled: true
+  InstanceOfCheckForException:
+    enabled: true
+    excludes: ['**/*Test*']
+  NotImplementedDeclaration:
+    enabled: true
+  ObjectExtendsThrowable:
+    enabled: true
+  PrintStackTrace:
+    enabled: true
+  RethrowCaughtException:
+    enabled: true
+  ReturnFromFinally:
+    enabled: true
+  SwallowedException:
+    enabled: true
+  ThrowingExceptionFromFinally:
+    enabled: true
+  ThrowingExceptionInMain:
+    enabled: true
+  ThrowingExceptionsWithoutMessageOrCause:
+    enabled: true
+  ThrowingNewInstanceOfSameException:
+    enabled: true
+  TooGenericExceptionCaught:
+    enabled: true
+    exceptionNames: ['ArrayIndexOutOfBoundsException', 'Error', 'Exception', 'IllegalMonitorStateException', 'NullPointerException', 'IndexOutOfBoundsException', 'RuntimeException', 'Throwable']
+  TooGenericExceptionThrown:
+    enabled: true
+    exceptionNames: ['Error', 'Exception', 'RuntimeException', 'Throwable']
+
+naming:
+  ClassNaming:
+    enabled: true
+    classPattern: '[A-Z][a-zA-Z0-9]*'
+  ConstructorParameterNaming:
+    enabled: true
+    parameterPattern: '[a-z][A-Za-z0-9]*'
+    privateParameterPattern: '[a-z][A-Za-z0-9]*'
+    excludeClassPattern: '$'
+  EnumNaming:
+    enabled: true
+    enumEntryPattern: '[A-Z][_a-zA-Z0-9]*'
+  ForbiddenClassName:
+    enabled: true
+    forbiddenName: ['Companion', 'File']
+  FunctionMaxLength:
+    enabled: true
+    maximumFunctionNameLength: 30
+  FunctionMinLength:
+    enabled: true
+    minimumFunctionNameLength: 3
+  FunctionNaming:
+    enabled: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/*.Test.kt', '**/*.Spec.kt']
+    functionPattern: '[a-z][a-zA-Z0-9]*'
+    excludeClassPattern: '$'
+  FunctionParameterNaming:
+    enabled: true
+    parameterPattern: '[a-z][A-Za-z0-9]*'
+    excludeClassPattern: '$'
+  InvalidPackageDeclaration:
+    enabled: true
+    rootPackage: 'com.msgmates.app'
+  LambdaParameterNaming:
+    enabled: true
+    parameterPattern: '[a-z][A-Za-z0-9]*'
+  MemberNameEqualsClassName:
+    enabled: true
+    ignoreOverridden: true
+  NoNameInPackage:
+    enabled: true
+    rootPackage: 'com.msgmates.app'
+  NonBooleanPropertyPrefixedWithIs:
+    enabled: true
+  ObjectPropertyNaming:
+    enabled: true
+    constantPattern: '[A-Za-z][_A-Za-z0-9]*'
+    propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
+  PackageNaming:
+    enabled: true
+    packagePattern: '[a-z]+(\.[a-z][A-Za-z0-9]*)*'
+  TopLevelPropertyNaming:
+    enabled: true
+    constantPattern: '[A-Z][_A-Za-z0-9]*'
+    propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
+  VariableMaxLength:
+    enabled: true
+    maximumVariableNameLength: 64
+  VariableMinLength:
+    enabled: true
+    minimumVariableNameLength: 1
+  VariableNaming:
+    enabled: true
+    variablePattern: '[a-z][A-Za-z0-9]*'
+    privateVariablePattern: '(_|ignored|expected|serialVersionUID|[a-z][A-Za-z0-9]*)'
+    excludeClassPattern: '$'

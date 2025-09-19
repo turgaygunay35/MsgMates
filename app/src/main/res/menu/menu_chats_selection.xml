@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Sil -->
+    <item
+        android:id="@+id/action_delete_selected"
+        android:icon="@drawable/ic_delete"
+        android:title="Sil"
+        app:showAsAction="ifRoom" />
+
+    <!-- Arşivle -->
+    <item
+        android:id="@+id/action_archive_selected"
+        android:icon="@drawable/ic_archive"
+        android:title="Arşivle"
+        app:showAsAction="ifRoom" />
+
+    <!-- Sessize Al -->
+    <item
+        android:id="@+id/action_mute_selected"
+        android:icon="@drawable/ic_notifications_off"
+        android:title="Sessize Al"
+        app:showAsAction="ifRoom" />
+
+    <!-- Tümünü Seç -->
+    <item
+        android:id="@+id/action_select_all"
+        android:title="Tümünü Seç"
+        app:showAsAction="never" />
+
+    <!-- Seçimi Kaldır -->
+    <item
+        android:id="@+id/action_deselect_all"
+        android:title="Seçimi Kaldır"
+        app:showAsAction="never" />
+
+</menu>

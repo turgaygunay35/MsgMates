@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MsgMates Ana Renk Paleti - Mavi-Turkuaz-Yeşil Gradyan -->
+    
+    <!-- Primary Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="primary_blue_light">#BBDEFB</color>
+    
+    <color name="primary_turquoise">#00BCD4</color>
+    <color name="primary_turquoise_dark">#0097A7</color>
+    <color name="primary_turquoise_light">#B2EBF2</color>
+    
+    <color name="primary_green">#4CAF50</color>
+    <color name="primary_green_dark">#388E3C</color>
+    <color name="primary_green_light">#C8E6C9</color>
+    
+    <!-- Gradyan Renkleri -->
+    <color name="gradient_start">#2196F3</color>
+    <color name="gradient_middle">#00BCD4</color>
+    <color name="gradient_end">#4CAF50</color>
+    
+    <!-- Disaster Mode Renkleri -->
+    <color name="disaster_red">#F44336</color>
+    <color name="disaster_red_dark">#D32F2F</color>
+    <color name="disaster_red_light">#FFCDD2</color>
+    
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="gray_400">#BDBDBD</color>
+    <color name="gray_500">#9E9E9E</color>
+    <color name="gray_600">#757575</color>
+    <color name="gray_700">#616161</color>
+    <color name="gray_800">#424242</color>
+    <color name="gray_900">#212121</color>
+    
+    <!-- Simple Colors -->
+    <color name="green">#4CAF50</color>
+    <color name="gray">#9E9E9E</color>
+    
+    <!-- Dark Mode Colors -->
+    <color name="dark_background">#121212</color>
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="dark_surface_variant">#2C2C2C</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    
+    <!-- Dark Text Colors -->
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#B3FFFFFF</color>
+    <color name="text_hint_dark">#61FFFFFF</color>
+    
+    <!-- MsgMates specific colors -->
+    <color name="mm_white">#FFFFFF</color>
+    <color name="mm_black">#000000</color>
+    <color name="mm_turquoise">#00BCD4</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Bottom Navigation -->
+    <color name="bottom_nav_background">#FFFFFF</color>
+    <color name="bottom_nav_selected">#2196F3</color>
+    <color name="bottom_nav_unselected">#757575</color>
+    
+    <!-- Disaster Mode Bottom Nav -->
+    <color name="disaster_bottom_nav_background">#F44336</color>
+    <color name="disaster_bottom_nav_selected">#FFFFFF</color>
+    <color name="disaster_bottom_nav_unselected">#FFCDD2</color>
+    
+    <!-- Journal Colors -->
+    <color name="journal_background">#FAFAFA</color>
+    <color name="journal_card_background">#FFFFFF</color>
+    <color name="journal_primary">#2196F3</color>
+    <color name="journal_primary_light">#BBDEFB</color>
+    <color name="journal_primary_dark">#1976D2</color>
+    <color name="journal_accent">#00BCD4</color>
+    <color name="journal_surface">#FFFFFF</color>
+    <color name="journal_surface_variant">#F5F5F5</color>
+    
+    <!-- Journal Dark Mode -->
+    <color name="journal_background_dark">#121212</color>
+    <color name="journal_card_background_dark">#1E1E1E</color>
+    <color name="journal_surface_dark">#1E1E1E</color>
+    <color name="journal_surface_variant_dark">#2C2C2C</color>
+    
+    <!-- Journal Text -->
+    <color name="journal_text_primary">#212121</color>
+    <color name="journal_text_secondary">#757575</color>
+    <color name="journal_text_hint">#BDBDBD</color>
+    <color name="journal_text_primary_dark">#FFFFFF</color>
+    <color name="journal_text_secondary_dark">#B3FFFFFF</color>
+    <color name="journal_text_hint_dark">#61FFFFFF</color>
+    
+    <!-- Journal Status -->
+    <color name="journal_success">#4CAF50</color>
+    <color name="journal_warning">#FF9800</color>
+    <color name="journal_error">#F44336</color>
+    <color name="journal_info">#2196F3</color>
+    
+    <!-- Journal Tags -->
+    <color name="journal_tag_background">#E3F2FD</color>
+    <color name="journal_tag_text">#1976D2</color>
+    <color name="journal_tag_background_dark">#1A237E</color>
+    <color name="journal_tag_text_dark">#BBDEFB</color>
+    
+    <!-- Additional Colors for Layouts -->
+    <color name="background_primary">#FAFAFA</color>
+    <color name="background_secondary">#F2F2F7</color>
+    <color name="primary">#2196F3</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="primary_dark">#1976D2</color>
+    
+    <!-- Menu Specific Colors -->
+    <color name="menu_background_light">#F9F9F9</color>
+    <color name="menu_background_dark">#121212</color>
+    <color name="menu_card_background">#FFFFFF</color>
+    <color name="menu_card_background_dark">#1E1E1E</color>
+    <color name="menu_empty_slot">#E0E0E0</color>
+    <color name="menu_empty_slot_dark">#2C2C2C</color>
+    
+    <!-- Menu Gradient Colors -->
+    <color name="menu_gradient_start">#2196F3</color>
+    <color name="menu_gradient_middle">#00BCD4</color>
+    <color name="menu_gradient_end">#4CAF50</color>
+    
+    <!-- Menu Text Colors -->
+    <color name="menu_text_primary">#212121</color>
+    <color name="menu_text_secondary">#757575</color>
+    <color name="menu_text_primary_dark">#FFFFFF</color>
+    <color name="menu_text_secondary_dark">#B3FFFFFF</color>
+    
+    <!-- Sohbet Modülü Renkleri -->
+    <color name="colorBrandBlue">#1B6BFF</color>
+    <color name="colorBrandTurquoise">#12CBC4</color>
+    <color name="colorBrandGreen">#17C964</color>
+    <color name="colorDisasterRed">#E53935</color>
+    
+    <!-- Surface Colors -->
+    <color name="surfaceVariant">#E0E0E0</color>
+    <color name="surfaceContainer">#F5F5F5</color>
+    
+    <!-- Text Colors (High Contrast) -->
+    <color name="textPrimaryDark">#212121</color>
+    <color name="textSecondaryDark">#757575</color>
+    <color name="textTertiaryDark">#9E9E9E</color>
+    
+    <!-- Icon Colors -->
+    <color name="iconPrimaryDark">#212121</color>
+    <color name="iconSecondaryDark">#757575</color>
+    
+    <!-- Divider Colors -->
+    <color name="dividerDark">#E0E0E0</color>
+    
+    <!-- Missing Colors -->
+    <color name="outline">#E0E0E0</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="msgmates_blue">#2196F3</color>
+    <color name="colorMute">#9E9E9E</color>
+    <color name="textSecondary">#757575</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="textPrimary">#212121</color>
+    <color name="colorArchive">#FF9800</color>
+    
+    <!-- Navigation Bar Colors -->
+    <color name="navContainerLight">#F5FAFD</color>
+    <color name="navContainerDark">#0F171A</color>
+    <color name="navActivePillLight">#E3F2FD</color>
+    <color name="navActivePillDark">#1A237E</color>
+    <color name="navIconActive">#1976D2</color>
+    <color name="navIconInactive">#757575</color>
+    <color name="navLabelActive">#1976D2</color>
+    <color name="navLabelInactive">#757575</color>
+    <color name="navGradientStart">#2196F3</color>
+    <color name="navGradientMid">#00BCD4</color>
+    <color name="navGradientEnd">#4CAF50</color>
+    
+    <!-- Emergency Numbers Colors -->
+    <color name="emergency_red">#F44336</color>
+    <color name="emergency_blue">#2196F3</color>
+    <color name="emergency_orange">#FF9800</color>
+    
+    <!-- Disaster Mode Colors -->
+    <color name="disaster_mode_red">#D32F2F</color>
+    <color name="disaster_mode_red_light">#FFCDD2</color>
+    <color name="disaster_primary_light">#E3F2FD</color>
+    
+    <!-- Profile Colors -->
+    <color name="secondary_blue">#00BCD4</color>
+    
+    <!-- Missing Colors -->
+    <color name="memory_card_front">#E3F2FD</color>
+    <color name="memory_primary">#2196F3</color>
+    <color name="menu_blue">#2196F3</color>
+    <color name="menu_green">#4CAF50</color>
+    <color name="menu_orange">#FF9800</color>
+    <color name="menu_purple">#9C27B0</color>
+    <color name="disaster_gradient_start">#F44336</color>
+    <color name="disaster_gradient_end">#D32F2F</color>
+    <color name="menu_teal">#00BCD4</color>
+    <color name="error_red">#F44336</color>
+    <color name="memory_card_background">#F5F5F5</color>
+    <color name="memory_text_primary">#212121</color>
+</resources>

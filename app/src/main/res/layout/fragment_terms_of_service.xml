@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kullanıcı Koşulları ve Gizlilik Politikası"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Last Updated -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Son Güncelleme: 15 Aralık 2024"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Introduction -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MsgMates uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursunuz:"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Section 1: Data Collection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. VERİ TOPLAMA VE İŞLEME"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki verilerinizi topluyoruz:"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Data Types List -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Konum bilgisi (GPS, ağ tabanlı konum)"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Telefon rehberi ve uygulamalardaki arkadaş listeleri"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Biyometrik veriler (yüz tanıma, parmak izi, ses izi)"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Kamera ve galeri erişimi ile toplanan görsel veriler"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Sesli komutlar ve mesajlaşma verileri"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Mesajlaşma platformlarından toplanan metin veriler"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Cihaz bilgileri (model, işletim sistemi, uygulama versiyonu)"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Kullanım istatistikleri ve analitik veriler"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Section 2: Purpose -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. VERİ İŞLEME AMAÇLARI"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toplanan verileriniz aşağıdaki amaçlarla işlenir:"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Uygulama hizmetlerinin sunulması ve geliştirilmesi"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Kullanıcı deneyiminin kişiselleştirilmesi"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Güvenlik ve kimlik doğrulama"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Yasal yükümlülüklerin yerine getirilmesi"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• İstatistiksel analiz ve raporlama"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Section 3: Data Sharing -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. VERİ PAYLAŞIMI"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verileriniz aşağıdaki durumlar dışında üçüncü kişilerle paylaşılmaz:"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Yasal zorunluluklar"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Mahkeme kararı veya resmi makam talebi"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Acil durumlar ve güvenlik tehditleri"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Hizmet sağlayıcıları (sadece gerekli veriler)"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Section 4: User Rights -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. KULLANICI HAKLARI"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KVKK kapsamında aşağıdaki haklara sahipsiniz:"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Verilerinizin işlenip işlenmediğini öğrenme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• İşlenen verileriniz hakkında bilgi talep etme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Verilerinizin düzeltilmesini veya silinmesini talep etme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Veri işleme faaliyetlerine itiraz etme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Zararın giderilmesini talep etme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Section 5: Data Security -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. VERİ GÜVENLİĞİ"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verilerinizin güvenliği için aşağıdaki önlemleri alıyoruz:"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• End-to-end şifreleme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Güvenli sunucu altyapısı"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Düzenli güvenlik güncellemeleri"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Erişim kontrolü ve yetkilendirme"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Section 6: Contact -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. İLETİŞİM"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KVKK kapsamındaki talepleriniz için:"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-posta: kvkk@msgmates.com"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telefon: +90 212 555 0123"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adres: İstanbul, Türkiye"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bu koşulları kabul ederek MsgMates uygulamasını kullanmaya başlayabilirsiniz."
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:background="@color/primary"
+            android:padding="16dp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

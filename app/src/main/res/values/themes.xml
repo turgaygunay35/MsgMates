@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+    <!-- MsgMates Light Theme -->
+    <style name="Theme.MsgMates" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/primary_turquoise</item>
+        <item name="colorSecondaryVariant">@color/primary_turquoise_dark</item>
+        <item name="colorOnSecondary">@color/text_on_primary</item>
+        
+        <!-- Background Colors -->
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+    
+    <!-- MsgMates Dark Theme -->
+    <style name="Theme.MsgMates.Dark" parent="Theme.MsgMates">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/primary_blue_light</item>
+        <item name="colorPrimaryVariant">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/black</item>
+        
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/primary_turquoise_light</item>
+        <item name="colorSecondaryVariant">@color/primary_turquoise</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <!-- Background Colors -->
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnBackground">@color/text_primary_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+        
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/dark_background</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    
+    <!-- Disaster Mode Theme -->
+    <style name="Theme.MsgMates.Disaster" parent="Theme.MsgMates.Dark">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/disaster_red</item>
+        <item name="colorPrimaryVariant">@color/disaster_red_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/disaster_red_light</item>
+        <item name="colorSecondaryVariant">@color/disaster_red</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <!-- Background Colors -->
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+        
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/disaster_red</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/disaster_red</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    
+    <!-- Widget Base Style -->
+    <style name="Widget">
+    </style>
+    
+    <!-- MsgMates Base Style -->
+    <style name="Widget.MsgMates" parent="Widget">
+    </style>
+    
+    <!-- MsgMates Button Base Style -->
+    <style name="Widget.MsgMates.Button" parent="Widget.MsgMates">
+    </style>
+    
+    <!-- Bottom Navigation Style -->
+    <style name="Widget.MsgMates.BottomNav">
+        <item name="android:background">@drawable/bg_bottom_nav_gradient</item>
+        <item name="itemIconTint">@android:color/white</item>
+        <item name="itemTextColor">@android:color/white</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.MsgMates.BottomNav.ActiveIndicator</item>
+        <item name="android:elevation">12dp</item>
+        <item name="android:alpha">1.0</item>
+    </style>
+    
+    <!-- Bottom Navigation Active Indicator -->
+    <style name="Widget.MsgMates.BottomNav.ActiveIndicator">
+        <item name="android:background">@drawable/bottom_nav_active_indicator</item>
+    </style>
+    
+    <!-- Disaster Mode Bottom Navigation -->
+    <style name="Widget.MsgMates.BottomNav.Disaster" parent="Widget.MsgMates.BottomNav">
+        <item name="android:background">@color/disaster_bottom_nav_background</item>
+        <item name="itemIconTint">@color/disaster_bottom_nav_unselected</item>
+        <item name="itemTextColor">@color/disaster_bottom_nav_unselected</item>
+    </style>
+    
+    <!-- Gradient Button Style -->
+    <style name="Widget.MsgMates.Button.Gradient">
+        <item name="android:background">@drawable/button_gradient_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    
+    <!-- Disaster Mode Button Style -->
+    <style name="Widget.MsgMates.Button.Disaster" parent="Widget.MsgMates.Button.Gradient">
+        <item name="android:background">@drawable/button_disaster_background</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    
+    <!-- Card Style -->
+    <style name="Widget.MsgMates.Card">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- Menu Grid Item Style -->
+    <style name="Widget.MsgMates.MenuItem">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <!-- Bottom Sheet Dialog Theme -->
+    <style name="Theme.MsgMates.BottomSheetDialog" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/textPrimaryDark</item>
+    </style>
+    
+    <!-- Reduced Animation Style for Accessibility -->
+    <style name="BottomSheetDialogAnimation_Reduced" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+    
+    <!-- Chat Item Style -->
+    <style name="ChatItemStyle" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+    
+    <!-- Status Capsule Style -->
+    <style name="StatusCapsuleStyle" parent="Widget.Material3.Chip.Filter">
+        <item name="chipMinHeight">32dp</item>
+        <item name="chipCornerRadius">16dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+</resources>

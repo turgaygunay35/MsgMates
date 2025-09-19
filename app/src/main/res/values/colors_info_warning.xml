@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Info -->
+    <color name="info_blue">#2196F3</color>            <!-- Ana Mavi -->
+    <color name="info_blue_light">#BBDEFB</color>      <!-- Açık Mavi (arka plan) -->
+
+    <!-- Warning -->
+    <color name="warning_orange">#FF9800</color>       <!-- Ana Turuncu -->
+    <color name="warning_orange_light">#FFE0B2</color> <!-- Açık Turuncu (arka plan) -->
+</resources>
+
+
+

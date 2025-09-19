@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/status_capsule_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_status_capsule"
+    android:minHeight="32dp"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:contentDescription="@string/cd_status_capsule"
+    android:tag="qa_status_capsule">
+
+    <ImageView
+        android:id="@+id/iv_status_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_status_live"
+        android:contentDescription="@string/status_live" />
+
+    <TextView
+        android:id="@+id/tv_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_live"
+        android:textAppearance="?attr/textAppearanceLabelMedium"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+</LinearLayout>

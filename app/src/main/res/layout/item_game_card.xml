@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardGame"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_margin="8dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Oyun İkonu -->
+        <ImageView
+            android:id="@+id/ivGameIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_play_24"
+            android:contentDescription="Oyun İkonu"
+            android:scaleType="centerInside" />
+
+        <!-- Oyun Adı -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGameName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oyun Adı"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Yakında Etiketi (Yeni Oyunlar için) -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvComingSoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yakında"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_blue"
+            android:background="@drawable/coming_soon_background"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_blue"
+        app:title="Profil"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Profile Picture Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_profile_photo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_profile_placeholder"
+                        android:background="@drawable/bg_circle_accent"
+                        android:padding="20dp"
+                        android:contentDescription="Profile Picture"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profil Fotoğrafı"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginTop="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_change_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Değiştir"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/primary_blue"
+                            app:cornerRadius="20dp"
+                            android:layout_marginEnd="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_delete_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sil"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/error_red"
+                            app:cornerRadius="20dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Personal Information Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kişisel Bilgiler"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Username -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/primary_blue"
+                        app:hintTextColor="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Kullanıcı Adı"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/text_primary" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Phone (Read-only) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/primary_blue"
+                        app:hintTextColor="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Telefon Numarası"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:textColor="@color/text_secondary"
+                            android:enabled="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Status Message -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_status_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/primary_blue"
+                        app:hintTextColor="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_status_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Durum Mesajı (Emoji destekli)"
+                            android:inputType="textMultiLine"
+                            android:maxLines="3"
+                            android:textColor="@color/text_primary" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Character Count -->
+                    <TextView
+                        android:id="@+id/tv_char_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/150"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="16dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Sharing Options Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paylaşım Seçenekleri"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- QR Code Share -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_qr_share"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="QR Kod ile Paylaş"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="@color/primary_blue"
+                        app:cornerRadius="12dp"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp"
+                        app:icon="@drawable/ic_qr"
+                        app:iconTint="@android:color/white" />
+
+                    <!-- Share Settings -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_share_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Bilgilerimi Paylaş"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="@color/secondary_blue"
+                        app:cornerRadius="12dp"
+                        android:textSize="16sp"
+                        app:icon="@drawable/ic_share"
+                        app:iconTint="@android:color/white" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Save Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Kaydet"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/primary_blue"
+                app:cornerRadius="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

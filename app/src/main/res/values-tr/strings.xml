@@ -1,0 +1,10 @@
+<resources>
+    <string name="menu_title">Menü</string>
+    <string name="menu_ayarlar">Ayarlar</string>
+    <string name="menu_afet_modu">Afet Modu</string>
+    <string name="menu_webmsgmates">WebMsgMates</string>
+    <string name="menu_mesaj_kapsulu">Mesaj Kapsülü</string>
+    <string name="menu_kisa_notlar">Kısa Notlar</string>
+    <string name="menu_arsiv">Arşiv</string>
+    <string name="menu_bos_slot">Boş Slot</string>
+</resources>

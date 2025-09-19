@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_video_call"
+        android:icon="@drawable/ic_video_call"
+        android:title="@string/menu_video_call"
+        android:contentDescription="@string/cd_video_call"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_voice_call"
+        android:icon="@drawable/ic_voice_call"
+        android:title="@string/menu_voice_call"
+        android:contentDescription="@string/cd_voice_call"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_more_vert"
+        android:title="@string/menu_more"
+        android:contentDescription="@string/cd_more"
+        app:showAsAction="ifRoom" />
+
+    <!-- Overflow Menü Öğeleri -->
+    <item
+        android:id="@+id/menu_view_profile"
+        android:title="@string/menu_view_profile" />
+
+    <item
+        android:id="@+id/menu_search_in_chat"
+        android:title="@string/menu_search_in_chat" />
+
+    <item
+        android:id="@+id/menu_media_files"
+        android:title="@string/menu_media_files" />
+
+    <item
+        android:id="@+id/menu_mute_toggle"
+        android:title="@string/menu_mute_toggle" />
+
+    <item
+        android:id="@+id/menu_disappearing"
+        android:title="@string/menu_disappearing" />
+
+    <item
+        android:id="@+id/menu_chat_theme"
+        android:title="@string/menu_chat_theme" />
+
+    <item
+        android:id="@+id/menu_report"
+        android:title="@string/menu_report" />
+
+    <item
+        android:id="@+id/menu_block"
+        android:title="@string/menu_block" />
+    
+    <item
+        android:id="@+id/action_disaster_message"
+        android:title="@string/action_disaster_message"
+        app:showAsAction="never" />
+
+</menu>

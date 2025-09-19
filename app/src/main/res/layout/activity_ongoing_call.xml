@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- Caller Avatar -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_caller_avatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_person"
+            app:civ_border_width="4dp"
+            app:civ_border_color="@color/white"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Caller Name -->
+        <TextView
+            android:id="@+id/tv_caller_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arama Devam Ediyor"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Call Duration -->
+        <TextView
+            android:id="@+id/tv_call_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:alpha="0.8"
+            android:layout_marginBottom="48dp" />
+
+        <!-- Call Type Indicator -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="48dp">
+
+            <ImageView
+                android:id="@+id/iv_call_type"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_phone"
+                android:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_call_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sesli Arama"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Call Controls -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Mute Button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_mute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_mic"
+                app:backgroundTint="@color/white"
+                app:tint="@color/primary_blue"
+                app:fabSize="normal" />
+
+            <!-- Hangup Button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_hangup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_phone_hangup"
+                app:backgroundTint="@color/error"
+                app:tint="@color/white"
+                app:fabSize="normal" />
+
+            <!-- Speaker Button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_speaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_speaker_off"
+                app:backgroundTint="@color/white"
+                app:tint="@color/primary_blue"
+                app:fabSize="normal" />
+
+            <!-- Camera Button (for video calls) -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_videocam"
+                android:visibility="gone"
+                app:backgroundTint="@color/white"
+                app:tint="@color/primary_blue"
+                app:fabSize="normal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+

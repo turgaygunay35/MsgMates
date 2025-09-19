@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- Content Container -->
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Photo Content -->
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:src="@drawable/ic_photo" />
+
+        <!-- Video Content -->
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- Text Content -->
+        <ScrollView
+            android:id="@+id/scroll_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="32dp"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_gravity="center"
+                tools:text="Bugün harika bir gün geçirdim! 🎉" />
+
+        </ScrollView>
+
+        <!-- Audio Content -->
+        <LinearLayout
+            android:id="@+id/layout_audio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_audio"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ses Kaydı"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oynat"
+                style="@style/Widget.Material3.Button.IconButton"
+                app:icon="@drawable/ic_play" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Top Progress Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/bg_top_gradient">
+
+        <ProgressBar
+            android:id="@+id/progress_segment"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="@android:color/white"
+            android:progressBackgroundTint="@android:color/white"
+            android:alpha="0.3" />
+
+    </LinearLayout>
+
+    <!-- Bottom Action Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@drawable/bg_bottom_gradient"
+        android:padding="16dp">
+
+        <!-- Reaction Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reaction_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Şahane"
+                android:textSize="12sp"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reaction_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Güldüm"
+                android:textSize="12sp"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reaction_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💪"
+                android:textSize="12sp"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reaction_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destek"
+                android:textSize="12sp"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <!-- Viewer Count -->
+        <TextView
+            android:id="@+id/tv_viewer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 kişi izledi"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:alpha="0.7"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Close Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:text="✕"
+        android:textSize="18sp"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_close_button" />
+
+</FrameLayout>

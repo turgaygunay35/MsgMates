@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- BLE (API 31+) -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <!-- Eski cihazlarda BLE taraması için konum izni gerekir -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
+    <!-- 2048 oyunu için titreşim izni -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- Kişileri okumak için gerekli izin -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+    <!-- İnternet bağlantısı için gerekli izinler -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Acil numaralar için telefon arama izni -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+    <!-- Sesli komut için mikrofon izni -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    
+    <!-- Foreground servisler için izinler -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    
+    <!-- Bildirim izni -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- Konum izinleri -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Cihazda BLE donanımı olmayabilir; optional ilan ediyoruz -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MsgMates"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="33">
+
+        <!-- Giriş kapısı -->
+        <activity
+            android:name=".ui.auth.LauncherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Ana ekran -->
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false" />
+
+        <!-- Auth host -->
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false" />
+
+        <!-- Oyun aktiviteleri -->
+        <activity
+            android:name=".ui.games.XOActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.TetrisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.Game2048Activity"
+            android:exported="false" />
+        
+        <!-- Yeni eklenen oyun aktiviteleri -->
+        <activity
+            android:name=".ui.games.sudoku.SudokuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.morris.MorrisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.hangman.HangmanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.snake.SnakeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.memory.MemoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.games.fifteen.FifteenActivity"
+            android:exported="false" />
+        
+        <!-- Journal activities -->
+        <activity
+            android:name=".ui.journal.watched.WatchedUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.journal.muted.MutedUsersActivity"
+            android:exported="false" />
+        
+        <!-- Emergency Numbers Activity -->
+        <activity
+            android:name=".ui.disaster.EmergencyNumbersActivity"
+            android:exported="false" />
+        
+        <!-- Disaster Settings Activity -->
+        <activity
+            android:name=".ui.disaster.DisasterSettingsActivity"
+            android:exported="false" />
+        
+        <!-- Disaster Mode Activity -->
+        <activity
+            android:name=".ui.disaster.DisasterModeActivity"
+            android:exported="false" />
+        
+        <!-- Earthquake Detection Service -->
+        <service
+            android:name=".core.disaster.EarthquakeDetectionService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+        
+        <!-- Voice Command Service -->
+        <service
+            android:name=".core.disaster.VoiceCommandService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+        
+        <!-- Location Service -->
+        <service
+            android:name=".core.location.LocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+    </application>
+</manifest>

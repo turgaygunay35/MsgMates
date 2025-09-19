@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/composer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:elevation="4dp">
+
+    <ImageButton
+        android:id="@+id/btn_attach"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/attach_file"
+        android:src="@drawable/ic_attach_file"
+        android:scaleType="centerInside" />
+
+    <ImageButton
+        android:id="@+id/btn_mic"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/record_voice"
+        android:src="@drawable/ic_mic"
+        android:scaleType="centerInside" />
+
+    <EditText
+        android:id="@+id/et_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/bg_message_input"
+        android:hint="@string/type_message"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines="4"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+    <ImageButton
+        android:id="@+id/btn_send"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_send_button"
+        android:contentDescription="@string/send_message"
+        android:src="@drawable/ic_send"
+        android:scaleType="centerInside"
+        android:enabled="false" />
+
+</LinearLayout>

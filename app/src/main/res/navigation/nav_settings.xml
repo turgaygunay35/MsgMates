@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_settings"
+    app:startDestination="@id/dest_settings_main">
+
+    <!-- Main Settings Screen -->
+    <fragment
+        android:id="@+id/dest_settings_main"
+        android:name="com.msgmates.app.ui.settings.SettingsFragment"
+        android:label="Ayarlar"
+        tools:layout="@layout/fragment_settings" />
+
+    <!-- Profile Settings -->
+    <fragment
+        android:id="@+id/dest_settings_profile"
+        android:name="com.msgmates.app.ui.settings.profile.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile">
+        
+        <action
+            android:id="@+id/actionProfileToQrShare"
+            app:destination="@id/dest_profile_qr_share" />
+            
+        <action
+            android:id="@+id/actionProfileToShareSettings"
+            app:destination="@id/dest_profile_share_settings" />
+    </fragment>
+    
+    <!-- QR Share Fragment -->
+    <fragment
+        android:id="@+id/dest_profile_qr_share"
+        android:name="com.msgmates.app.ui.settings.profile.QrShareFragment"
+        android:label="QR ile Paylaş"
+        tools:layout="@layout/fragment_qr_share" />
+        
+    <!-- Share Settings Fragment -->
+    <fragment
+        android:id="@+id/dest_profile_share_settings"
+        android:name="com.msgmates.app.ui.settings.profile.ShareSettingsFragment"
+        android:label="Bilgi Paylaşımı"
+        tools:layout="@layout/fragment_share_settings" />
+
+    <!-- Notification Settings -->
+    <fragment
+        android:id="@+id/dest_settings_notifications"
+        android:name="com.msgmates.app.ui.settings.notifications.NotificationsFragment"
+        android:label="Bildirimler"
+        tools:layout="@layout/fragment_notifications" />
+
+    <!-- Privacy Settings -->
+    <fragment
+        android:id="@+id/dest_settings_privacy"
+        android:name="com.msgmates.app.ui.settings.privacy.PrivacyFragment"
+        android:label="Gizlilik"
+        tools:layout="@layout/fragment_privacy" />
+
+    <!-- Security Settings -->
+    <fragment
+        android:id="@+id/dest_settings_security"
+        android:name="com.msgmates.app.ui.settings.security.SecurityFragment"
+        android:label="Güvenlik"
+        tools:layout="@layout/fragment_security" />
+
+    <!-- General Settings -->
+    <fragment
+        android:id="@+id/dest_settings_general"
+        android:name="com.msgmates.app.ui.settings.general.GeneralFragment"
+        android:label="Genel"
+        tools:layout="@layout/fragment_general" />
+
+    <!-- Messages Settings -->
+    <fragment
+        android:id="@+id/dest_settings_messages"
+        android:name="com.msgmates.app.ui.settings.messages.MessagesFragment"
+        android:label="Mesajlar"
+        tools:layout="@layout/fragment_messages" />
+
+    <!-- Theme Settings -->
+    <fragment
+        android:id="@+id/dest_settings_theme"
+        android:name="com.msgmates.app.ui.settings.theme.ThemeFragment"
+        android:label="Tema"
+        tools:layout="@layout/fragment_theme" />
+
+    <!-- Language Settings -->
+    <fragment
+        android:id="@+id/dest_settings_language"
+        android:name="com.msgmates.app.ui.settings.language.LanguageFragment"
+        android:label="Dil"
+        tools:layout="@layout/fragment_language" />
+
+    <!-- Statistics Settings -->
+    <fragment
+        android:id="@+id/dest_settings_statistics"
+        android:name="com.msgmates.app.ui.settings.statistics.StatisticsFragment"
+        android:label="İstatistikler"
+        tools:layout="@layout/fragment_statistics" />
+
+    <!-- Help Settings -->
+    <fragment
+        android:id="@+id/dest_settings_help"
+        android:name="com.msgmates.app.ui.settings.help.HelpFragment"
+        android:label="Yardım"
+        tools:layout="@layout/fragment_help" />
+
+    <!-- Logout Settings -->
+    <fragment
+        android:id="@+id/dest_settings_logout"
+        android:name="com.msgmates.app.ui.settings.logout.LogoutFragment"
+        android:label="Çıkış Yap"
+        tools:layout="@layout/fragment_logout" />
+
+    <!-- Navigation Actions -->
+    <action
+        android:id="@+id/action_settings_to_profile"
+        app:destination="@id/dest_settings_profile" />
+
+    <action
+        android:id="@+id/action_settings_to_general"
+        app:destination="@id/dest_settings_general" />
+
+    <action
+        android:id="@+id/action_settings_to_messages"
+        app:destination="@id/dest_settings_messages" />
+
+    <action
+        android:id="@+id/action_settings_to_privacy"
+        app:destination="@id/dest_settings_privacy" />
+
+    <action
+        android:id="@+id/action_settings_to_security"
+        app:destination="@id/dest_settings_security" />
+
+    <action
+        android:id="@+id/action_settings_to_notifications"
+        app:destination="@id/dest_settings_notifications" />
+
+    <action
+        android:id="@+id/action_settings_to_theme"
+        app:destination="@id/dest_settings_theme" />
+
+    <action
+        android:id="@+id/action_settings_to_language"
+        app:destination="@id/dest_settings_language" />
+
+    <action
+        android:id="@+id/action_settings_to_statistics"
+        app:destination="@id/dest_settings_statistics" />
+
+    <action
+        android:id="@+id/action_settings_to_help"
+        app:destination="@id/dest_settings_help" />
+
+    <action
+        android:id="@+id/action_settings_to_logout"
+        app:destination="@id/dest_settings_logout" />
+
+</navigation>
