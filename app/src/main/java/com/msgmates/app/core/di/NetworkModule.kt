@@ -20,8 +20,8 @@ import com.msgmates.app.core.metrics.MetricsCollector
 import com.msgmates.app.core.network.AuthInterceptor
 import com.msgmates.app.core.network.CacheControlInterceptor
 import com.msgmates.app.core.network.NetworkConfig
-import com.msgmates.app.core.network.RefreshAuthenticator
 import com.msgmates.app.core.network.RequestIdInterceptor
+import com.msgmates.app.core.network.TokenAuthenticator
 import com.msgmates.app.core.notification.ChatNotification
 import coil.ImageLoader
 import coil.disk.DiskCache
@@ -34,6 +34,8 @@ import com.msgmates.app.core.upload.UploadApi
 import com.msgmates.app.data.remote.auth.AuthApiService
 import com.msgmates.app.data.repository.auth.AuthRepository
 import com.msgmates.app.data.repository.auth.AuthRepositoryImpl
+import com.msgmates.app.data.local.prefs.UserPrefsDataStore
+import com.msgmates.app.network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -85,7 +87,7 @@ object NetworkModule {
 
     // ---- REQUEST ID INTERCEPTOR ----
     @Provides @Singleton
-    fun provideRequestIdInterceptor(): com.msgmates.app.core.network.RequestIdInterceptor = com.msgmates.app.core.network.RequestIdInterceptor()
+    fun provideRequestIdInterceptor(): RequestIdInterceptor = RequestIdInterceptor()
 
     // ---- REFRESH (AYRI) MÜŞTERİ/RETROFIT (token yenileme için) ----
     @Provides @Singleton @Named("refreshOkHttp")
@@ -137,11 +139,9 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideAuthenticator(
-        tokenProvider: com.msgmates.app.core.auth.TokenReadOnlyProvider,
-        tokenRefresher: com.msgmates.app.core.auth.TokenRefresher,
-        tokenRepository: TokenRepository,
-        metrics: com.msgmates.app.core.metrics.MetricsCollector
-    ): RefreshAuthenticator = RefreshAuthenticator(tokenProvider, tokenRefresher, tokenRepository, metrics)
+        userPrefs: UserPrefsDataStore,
+        apiService: ApiService
+    ): TokenAuthenticator = TokenAuthenticator(userPrefs, apiService)
 
     // ---- ANA OKHTTP (UYGULAMA İÇİN) ----
     @Provides
@@ -163,7 +163,7 @@ object NetworkModule {
         requestIdInterceptor: RequestIdInterceptor,
         cacheControlInterceptor: CacheControlInterceptor,
         authInterceptor: AuthInterceptor,
-        refreshAuthenticator: RefreshAuthenticator,
+        tokenAuthenticator: TokenAuthenticator,
         httpCache: Cache
     ): OkHttpClient = OkHttpClient.Builder()
         .cache(httpCache)
@@ -171,7 +171,7 @@ object NetworkModule {
         .addInterceptor(requestIdInterceptor)
         .addInterceptor(cacheControlInterceptor)
         .addInterceptor(authInterceptor)
-        .authenticator(refreshAuthenticator)
+        .authenticator(tokenAuthenticator)
         .addInterceptor(logger)
         .connectTimeout(NetworkConfig.connectTimeoutSeconds, TimeUnit.SECONDS)
         .readTimeout(NetworkConfig.readTimeoutSeconds, TimeUnit.SECONDS)
@@ -218,8 +218,7 @@ object NetworkModule {
     // ---- TOKEN REPOSITORY ----
     @Provides
     @Singleton
-    fun provideTokenRepository(impl: com.msgmates.app.core.auth.TokenRepositoryImpl): com.msgmates.app.core.auth.TokenRepository =
-        impl
+    fun provideTokenRepository(impl: TokenRepositoryImpl): TokenRepository = impl
 
     // ---- SECURE TOKEN STORE ----
     @Provides
@@ -238,7 +237,7 @@ object NetworkModule {
     // ---- METRICS COLLECTOR ----
     @Provides
     @Singleton
-    fun provideMetricsCollector(): com.msgmates.app.core.metrics.MetricsCollector = com.msgmates.app.core.metrics.MetricsCollector()
+    fun provideMetricsCollector(): MetricsCollector = MetricsCollector()
 
     // ---- AUTH REPOSITORY (NEW OTP) ----
     @Provides @Singleton
@@ -307,18 +306,18 @@ object NetworkModule {
         .okHttpClient(okHttpClient)
         .memoryCache {
             MemoryCache.Builder(context)
-                .maxSizePercent(0.25) // 25% of available memory
+                .maxSizePercent(0.25)
                 .build()
         }
         .diskCache {
             DiskCache.Builder()
                 .directory(File(context.cacheDir, "image_cache"))
-                .maxSizeBytes(256 * 1024 * 1024) // 256MB
+                .maxSizeBytes(256 * 1024 * 1024)
                 .build()
         }
-        .respectCacheHeaders(false) // Always use our cache
-        .allowHardware(true) // Use hardware bitmaps
-        .allowRgb565(true) // Use RGB565 for better memory usage
+        .respectCacheHeaders(false)
+        .allowHardware(true)
+        .allowRgb565(true)
         .build()
 
     // ---- FLOOD PROTECTION ----
@@ -327,5 +326,5 @@ object NetworkModule {
 
     // ---- METRICS ----
     @Provides @Singleton
-    fun provideMetrics(): com.msgmates.app.core.metrics.Metrics = com.msgmates.app.core.metrics.MetricsCollector()
+    fun provideMetrics(): com.msgmates.app.core.metrics.Metrics = MetricsCollector()
 }
